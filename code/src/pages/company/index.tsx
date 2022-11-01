@@ -29,7 +29,7 @@ const Company: NextPage = () => {
             </div>
             <div className="md:text-xl text-base font-medium">
               <ul className="list-none space-y-2">
-                <li>info@joinpickup.com</li>
+                <li>hello@joinpickup.com</li>
               </ul>
             </div>
           </div>
