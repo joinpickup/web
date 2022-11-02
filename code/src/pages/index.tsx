@@ -23,9 +23,9 @@ export const Navbar: NextPage = () => {
       <div className="container flex flex-wrap justify-between items-center mx-auto">
         <a href="/" className="flex items-center">
           <div className="mr-2 p-2 rounded-full">
-              <img src="pickup-logo.svg" className="h-6 sm:h-9" alt="Pickup Logo" />
+              <img src="pickup-logo-v2.svg" className="h-6 sm:h-9" alt="Pickup Logo" />
           </div>
-            <span className="self-center text-gray-300 text-xl font-semibold whitespace-nowrap">Pickup</span>
+            <span className="self-center text-gray-300 text-2xl whitespace-nowrap">Pickup</span>
         </a>
         <button data-collapse-toggle="navbar-default" type="button" className="inline-flex items-center p-2 ml-3 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-300 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-default" aria-expanded="false">
           <span className="sr-only">Open main menu</span>
