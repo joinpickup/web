@@ -23,7 +23,7 @@ export const Navbar: NextPage = () => {
       <div className="container flex flex-wrap justify-between items-center mx-auto">
         <a href="/" className="flex items-center">
           <div className="mr-2 p-2 rounded-full">
-              <img src="pickup-logo-v2.svg" className="h-6 sm:h-9" alt="Pickup Logo" />
+              <img src="/pickup-logo-v2.svg" className="h-6 sm:h-9" alt="Pickup Logo" />
           </div>
             <span className="self-center text-gray-300 text-2xl whitespace-nowrap">Pickup</span>
         </a>

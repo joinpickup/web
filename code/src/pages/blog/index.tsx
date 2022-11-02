@@ -1,19 +1,28 @@
-import {NextPage} from "next";
-import {getDatabase} from "../../lib/notion";
+import {useEffect} from "react";
+import {getBlogPosts} from "../../lib/notion";
 import {Navbar} from "../index";
 
 export async function getServerSideProps() {
-  const database = await getDatabase(process.env.NOTION_PAGE_ID as string)
-  console.log()
+  let posts = await getBlogPosts()
 
   return {
     props: {
-      posts: database,
+      posts
     }
   }
 }
 
-const Blog: NextPage = ({ posts }: any) => {
+
+interface Props {
+  posts: any[];
+}
+
+
+const Blog: React.FC<Props> = (props) => {
+  useEffect(() => {
+    console.log(props.posts);
+  },[])
+
   return (
     <>
       <Navbar />
