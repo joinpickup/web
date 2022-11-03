@@ -12,7 +12,7 @@ const Spaces: NextPage = () => {
           </div>
           <div className="flex flex-col space-y-4">
             <div className="flex md:text-6xl text-3xl md:w-128">Introducing Spaces</div>
-            <div className="flex md:text-xl text-base font-medium md:w-128">Spaces allow you to separate your interests into different sections of the app. instead of seeing events, posts and groups relating to all interests, choose the space relating to the interest you want to see.</div>
+            <div className="flex md:text-xl text-base font-medium md:w-128">Spaces separates your interests into categories. Choose the Spaces that best align with your interests to communicate directly with the people who are into what you’re into.</div>
           </div>
         </div>
       </main>

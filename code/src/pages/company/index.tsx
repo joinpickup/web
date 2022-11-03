@@ -9,7 +9,7 @@ const Company: NextPage = () => {
         <div className="flex flex-col justify-center w-full space-y-4">
           <div className="flex flex-col space-y-4">
             <div className="flex md:text-6xl text-3xl md:w-128">About Pickup LLC</div>
-            <div className="flex md:text-xl text-base font-medium md:w-128">We are a close knit team dedicated to helping make the world a better place. From community building, to sustainable technology, to tools to help people slow down and take in the world around them.</div>
+            <div className="flex md:text-xl text-base font-medium md:w-128">We are a close knit team focused on implementing meaningful change at the local level. From community building, to sustainable technology, to tools to help people slow down and take in the world around them, at its core our software is designed to give the experience back to the user.</div>
           </div>
           <div className="flex flex-col space-y-4">
             <div className="md:text-3xl text-2xl">
