@@ -1,7 +1,7 @@
 import {useRouter} from "next/router";
 import {useEffect} from "react";
 import {Navbar} from "../..";
-import {getBlocks, getBlogPosts, getPage} from "../../../lib/notion";
+import {getBlocks, getBlogPosts} from "../../../lib/notion";
 import {BlogPost} from "../../../model/blog";
 
 export async function getServerSideProps(context: any) {
