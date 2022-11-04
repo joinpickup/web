@@ -5,4 +5,5 @@ export interface BlogPost {
   slug: string
   tags: string[]
   id: string
+  summary: string
 }
