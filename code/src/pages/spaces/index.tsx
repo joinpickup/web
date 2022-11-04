@@ -1,5 +1,5 @@
 import {NextPage} from "next";
-import {Navbar} from "../index";
+import {Navbar} from "../../components/navbar";
 
 const Spaces: NextPage = () => {
   return (
