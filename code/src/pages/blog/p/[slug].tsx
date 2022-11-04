@@ -1,6 +1,6 @@
 import {useRouter} from "next/router";
 import {useEffect} from "react";
-import {Navbar} from "../..";
+import {Navbar} from "../../../components/navbar";
 import {getBlocks, getBlogPosts} from "../../../lib/notion";
 import {BlogPost} from "../../../model/blog";
 
