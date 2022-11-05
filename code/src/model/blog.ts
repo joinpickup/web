@@ -1,7 +1,7 @@
 export interface BlogPost {
   author: string
   title: string
-  published: Date
+  published: string
   slug: string
   tags: string[]
   id: string

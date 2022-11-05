@@ -63,7 +63,7 @@ export const getBlogPosts = async () => {
     }
 
     return blogPosts
-  } catch {
+  } catch (e) {
     return []
   }
 }

@@ -1,7 +1,8 @@
 import {useRouter} from "next/router";
 import {useEffect} from "react";
+import PageContent from "../../../components/blog/content";
 import {Navbar} from "../../../components/navbar";
-import {getBlocks, getBlogPosts} from "../../../lib/notion";
+import {getBlocks, getBlogPosts, getPage} from "../../../lib/notion";
 import {BlogPost} from "../../../model/blog";
 
 export async function getServerSideProps(context: any) {
@@ -23,7 +24,7 @@ export async function getServerSideProps(context: any) {
 
 interface Props {
   post: BlogPost | null;
-  content: {};
+  content: any;
 }
 
 
@@ -41,9 +42,23 @@ const BlogPage: React.FC<Props> = (props) => {
     <>
       <Navbar />
       <main className="container mx-auto flex min-h-screen flex-col p-4 space-y-4">
-        <div className="flex flex-col justify-center items-center w-full space-y-4">
-          <div className="flex text-3xl">
-            {props.post?.title}
+        <div className="flex flex-col justify-center w-full space-y-4">
+          <div className="flex flex-col space-y-1 mb-2">
+            <div className="flex text-6xl">
+              {props.post?.title}
+            </div>
+            <div className="flex text-xl space-x-2 items-center">
+              <div className="font-medium text-md">
+                {props.post?.author}
+              </div>
+              <div className="font-medium text-sm text-gray-400">
+                {props.post?.published.toString()}
+              </div>
+            </div>
+          </div>
+          <hr />
+          <div className="flex w-full">
+            <PageContent content={props.content}/>
           </div>
         </div>
       </main>

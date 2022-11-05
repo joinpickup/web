@@ -1,13 +1,15 @@
 import type { NextPage } from "next";
-import {useEffect, useState} from "react";
+import {useRouter} from "next/router";
+import {useState} from "react";
 
 export const Navbar: NextPage = () => {
+  const router = useRouter()
   const [menu, setMenu] = useState(false)
 
   return (
     <nav className="px-2 sm:px-4 py-2.5">
       <div className="container flex flex-wrap justify-between items-center mx-auto">
-        <a href="/" className="flex items-center">
+        <a onClick={() => {router.push("/")}} className="flex items-center">
           <div className="mr-2 p-2 rounded-full">
               <img src="/pickup-logo-v2.svg" className="h-6 sm:h-9" alt="Pickup Logo" />
           </div>
@@ -20,13 +22,13 @@ export const Navbar: NextPage = () => {
         <div className={`${menu ? "" : "hidden"} w-full md:block md:w-auto`} id="navbar-default">
           <ul className="flex flex-col p-4 mt-4 rounded-lg md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0">
             <li className="hover:bg-gray-600 rounded-lg">
-              <a href="/spaces" className="block py-2 pr-4 pl-3">Spaces</a>
+              <a onClick={() => {router.push("/spaces")}} className="block py-2 pr-4 pl-3">Spaces</a>
             </li>
             <li className="hover:bg-gray-600 rounded-lg">
-              <a href="/blog" className="block py-2 pr-4 pl-3">Blog</a>
+              <a onClick={() => {router.push("/blog")}} className="block py-2 pr-4 pl-3">Blog</a>
             </li>
             <li className="hover:bg-gray-600 rounded-lg">
-              <a href="/company" className="block py-2 pr-4 pl-3">Company</a>
+              <a onClick={() => {router.push("/company")}}  className="block py-2 pr-4 pl-3">Company</a>
             </li>
           </ul>
         </div>
