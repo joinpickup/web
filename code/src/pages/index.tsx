@@ -17,8 +17,6 @@ const Home: NextPage = () => {
   );
 };
 
-
-
 export const MainContent = () => {
   return (
       <main className="container mx-auto flex min-h-screen flex-col p-4 space-y-4">
