@@ -18,9 +18,9 @@ spec:
       containers:
       - name: web
         image: joinpickup/web:$TAG
-      envFrom:
-        - secretRef:
-            name: web
+        envFrom:
+          - secretRef:
+              name: web
 ---
 apiVersion: v1
 kind: Service
