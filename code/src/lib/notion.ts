@@ -1,4 +1,4 @@
-import {Client} from "@notionhq/client"
+import { Client } from "@notionhq/client"
 import { BlogPost } from "../model/blog";
 
 
@@ -34,7 +34,6 @@ export const getUser = async (userId: string) => {
 
 export const getBlogPosts = async () => {
   try {
-
     const database = await getDatabase(process.env.NOTION_PAGE_ID as string)
 
     let blogPosts:BlogPost[] = []

@@ -55,9 +55,18 @@ const CalloutRenderer = (props: any) => {
 // bullet list
 const BulletListItem = (props: any) => {
   return (
-    <li className="text-base">
+    <li className="text-base list-disc">
       {props.content}
     </li>
+  )
+}
+
+// quote
+const QuoteRenderer = (props: any) => {
+  return (
+    <div className="flex px-4 py-2 border-l-2">
+      {props.content}
+    </div>
   )
 }
 
@@ -82,6 +91,8 @@ const PageContent: React.FC<Props> = (props) => {
                 return <PRenderer key={block.id} content={block.paragraph.rich_text[0]?.plain_text}/>
               case "callout":
                 return <CalloutRenderer key={block.id} content={block.callout.rich_text[0]?.plain_text} />
+              case "quote":
+                return <QuoteRenderer key={block.id} content={block.quote.rich_text[0]?.plain_text} />
               case "bulleted_list_item":
                 return <BulletListItem key={block.id} content={block.bulleted_list_item.rich_text[0]?.plain_text} />
               case "divider":

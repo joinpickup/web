@@ -11,8 +11,8 @@ const BlogCard: React.FC<Props> = (props) => {
 
   return (
     <>
-      <a onClick={() => router.push(`/blog/p/${props.post.slug}`)} className="block p-7 bg-gray-800 w-full rounded-lg border shadow-md hover:bg-gray-600 cursor-pointer space-y-2">
-        <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{props.post.title}</h5>
+      <a onClick={() => router.push(`/blog/p/${props.post.slug}`)} className="block p-7 bg-gray-700 w-full rounded-lg border shadow-md hover:bg-gray-600 cursor-pointer space-y-2">
+        <h5 className="mb-2 text-2xl font-bold tracking-tight text-white">{props.post.title}</h5>
         <p className="font-normal text-lg text-gray-400">{props.post.summary}
         </p>
         <div className="flex space-x-2 items-center">
