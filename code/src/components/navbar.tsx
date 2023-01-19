@@ -3,12 +3,17 @@ import { useRouter } from "next/router";
 import { useState } from "react";
 import Badge from "../../ACE/Badge/Badge";
 import Button, { ButtonType } from "../../ACE/Button/Button";
+import Input from "../../ACE/Input/Input";
 
 export const Navbar: NextPage = () => {
+  // router
   const router = useRouter();
+
+  // state
   const [menu, setMenu] = useState(false);
   const [apps, setApps] = useState(false);
   const [community, setCommunity] = useState(false);
+  const [email, setEmail] = useState("");
 
   return (
     <nav className="m-4 flex items-center justify-between md:justify-around">
@@ -68,7 +73,7 @@ export const Navbar: NextPage = () => {
                 <li
                   className="max-w-md cursor-pointer rounded-lg p-4 hover:bg-gray-700"
                   onClick={() => {
-                    router.push("/");
+                    router.push("/apps/platform");
                   }}
                 >
                   <div className="">Pickup Platform</div>
@@ -79,7 +84,10 @@ export const Navbar: NextPage = () => {
                 </li>
                 <li className="max-w-md cursor-pointer rounded-lg p-4 hover:bg-gray-700">
                   <a className="" href="https://quest.joinpickup.com">
-                    <div className="">The Daily Quest</div>
+                    <div className="flex items-center space-x-2">
+                      <div>The Daily Quest</div>
+                      <Badge text="Beta" />
+                    </div>
                     <div className="text-sm text-gray-400">
                       A daily challenge to check in with your support system.
                     </div>
@@ -121,7 +129,7 @@ export const Navbar: NextPage = () => {
                 <li
                   className="max-w-md cursor-pointer rounded-lg p-4 hover:bg-gray-700"
                   onClick={() => {
-                    router.push("/");
+                    router.push("/blog");
                   }}
                 >
                   <div className="flex items-center space-x-2">
@@ -134,7 +142,12 @@ export const Navbar: NextPage = () => {
                   </div>
                 </li>
                 <li className="max-w-md cursor-pointer rounded-lg p-4 hover:bg-gray-700">
-                  <a className="" href="https://quest.joinpickup.com">
+                  <a
+                    className=""
+                    href="https://discord.gg/eJkfddvpgD"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     <div className="">Discord</div>
                     <div className="text-sm text-gray-400">
                       Find information about development, interact with the
@@ -143,7 +156,7 @@ export const Navbar: NextPage = () => {
                   </a>
                 </li>
                 <li className="max-w-md cursor-pointer rounded-lg p-4 hover:bg-gray-700">
-                  <a className="" href="https://quest.joinpickup.com">
+                  <a className="" href="https://github.com/joinpickup/">
                     <div className="">Github</div>
                     <div className="text-sm text-gray-400">
                       If you want to take a look at the technology that we use.
@@ -156,7 +169,12 @@ export const Navbar: NextPage = () => {
             </div>
           )}
         </li>
-        <li className="flex cursor-pointer items-center space-x-2 rounded-lg p-2 hover:bg-gray-600">
+        <li
+          className="flex cursor-pointer items-center space-x-2 rounded-lg p-2 hover:bg-gray-600"
+          onClick={() => {
+            router.push("/company");
+          }}
+        >
           <div>Company Info</div>
         </li>
       </ul>
@@ -167,9 +185,16 @@ export const Navbar: NextPage = () => {
           </Button>
         </div> */}
         <div className="min-w-fit">
-          <Button type={ButtonType.CONTAINED} click={() => {}}>
-            <div>Join The Discord</div>
-          </Button>
+          <a
+            className=""
+            href="https://discord.gg/eJkfddvpgD"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Button type={ButtonType.CONTAINED} click={() => {}}>
+              <div>Join The Discord</div>
+            </Button>
+          </a>
         </div>
       </div>
 
@@ -199,14 +224,14 @@ export const Navbar: NextPage = () => {
         {!menu ? (
           <></>
         ) : (
-          <div className="divider absolute left-0 z-10 m-4 flex translate-y-12 flex-col space-y-2 rounded-lg bg-gray-600 p-4 shadow-lg">
+          <div className="absolute left-0 z-10 m-4 flex translate-y-12 flex-col space-y-2 rounded-lg bg-gray-600 p-4 shadow-lg">
             <div className="flex flex-col">
               <div className="p-4 text-2xl">Our Apps</div>
               <ul className="flex flex-col space-y-2">
                 <li
                   className="max-w-md cursor-pointer rounded-lg p-4 hover:bg-gray-700"
                   onClick={() => {
-                    router.push("/");
+                    router.push("/apps/platform");
                   }}
                 >
                   <div className="">Pickup Platform</div>
@@ -217,7 +242,10 @@ export const Navbar: NextPage = () => {
                 </li>
                 <li className="max-w-md cursor-pointer rounded-lg p-4 hover:bg-gray-700">
                   <a className="" href="https://quest.joinpickup.com">
-                    <div className="">The Daily Quest</div>
+                    <div className="flex items-center space-x-2">
+                      <div>The Daily Quest</div>
+                      <Badge text="Beta" />
+                    </div>
                     <div className="text-sm text-gray-400">
                       A daily challenge to check in with your support system.
                     </div>
@@ -231,7 +259,7 @@ export const Navbar: NextPage = () => {
                 <li
                   className="max-w-md cursor-pointer rounded-lg p-4 hover:bg-gray-700"
                   onClick={() => {
-                    router.push("/");
+                    router.push("/blog");
                   }}
                 >
                   <div className="flex items-center space-x-2">
@@ -244,7 +272,12 @@ export const Navbar: NextPage = () => {
                   </div>
                 </li>
                 <li className="max-w-md cursor-pointer rounded-lg p-4 hover:bg-gray-700">
-                  <a className="" href="https://quest.joinpickup.com">
+                  <a
+                    className=""
+                    href="https://discord.gg/eJkfddvpgD"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     <div className="">Discord</div>
                     <div className="text-sm text-gray-400">
                       Find information about development, interact with the
@@ -253,7 +286,7 @@ export const Navbar: NextPage = () => {
                   </a>
                 </li>
                 <li className="max-w-md cursor-pointer rounded-lg p-4 hover:bg-gray-700">
-                  <a className="" href="https://quest.joinpickup.com">
+                  <a className="" href="https://github.com/joinpickup">
                     <div className="">Github</div>
                     <div className="text-sm text-gray-400">
                       If you want to take a look at the technology that we use.
@@ -270,25 +303,33 @@ export const Navbar: NextPage = () => {
                 <li
                   className="max-w-md cursor-pointer rounded-lg p-4 hover:bg-gray-700"
                   onClick={() => {
-                    router.push("/");
+                    router.push("/company");
                   }}
                 >
                   <div className="flex items-center space-x-2">
                     <div>Pickup LLC</div>
                   </div>
                   <div className="text-sm text-gray-400">
-                    We believe that the system is broken and that its up to everyon to build it back better.
+                    We believe that the system is broken and that its up to
+                    everyon to build it back better.
                   </div>
                 </li>
               </ul>
             </div>
-            <div>
-              <Button type={ButtonType.CONTAINED} click={() => {}}>
-                <div>
-                  Get Started
-                </div>
-              </Button>
-            </div>
+            {/* <div className="flex w-full flex-col space-y-2 md:w-fit md:flex-row md:space-y-0 md:space-x-2">
+              <Input
+                className="h-10 w-full rounded-lg bg-gray-500 px-4 font-bold text-gray-300 placeholder:text-gray-400 focus:border-primary focus:outline-none focus:ring-2 focus:ring-green-500"
+                placeholder="Enter your email..."
+                type="email"
+                value={email}
+                change={setEmail}
+              />
+              <div className="">
+                <Button type={ButtonType.CONTAINED} click={() => {}}>
+                  <div>Join The Waitlist</div>
+                </Button>
+              </div>
+            </div> */}
           </div>
         )}
       </div>

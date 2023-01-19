@@ -5,8 +5,8 @@ const Company: NextPage = () => {
   return (
     <>
       <Navbar />
-      <main className="container mx-auto flex min-h-screen flex-col space-y-4 p-4">
-        <div className="flex w-full flex-col justify-center space-y-4">
+      <main className="m-4 flex flex-col items-center space-y-4 p-4">
+        <div className="mt-12 flex flex-col space-y-4 md:w-128">
           <div className="flex flex-col space-y-4">
             <div className="flex text-3xl md:w-128 md:text-6xl">
               About Pickup LLC

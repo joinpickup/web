@@ -22,21 +22,15 @@ interface Props {
 }
 
 const Blog: React.FC<Props> = (props) => {
-  useEffect(() => {
-    console.log(props.posts);
-    console.log(props.database);
-  });
-
   return (
     <>
       <Navbar />
-      <main className="container flex min-h-screen flex-col space-y-4 bg-gray-600 p-4">
-        <div className="flex w-full flex-col items-center justify-center space-y-4">
-          {props.posts.length == 0 ? <div>Coming Soon</div> : <></>}
+      <main className="flex flex-col items-center space-y-4">
+        <ul className="flex flex-col space-y-4 p-4 md:w-128">
           {props.posts.map((post) => {
             return <BlogCard post={post} key={post.id} />;
           })}
-        </div>
+        </ul>
       </main>
     </>
   );

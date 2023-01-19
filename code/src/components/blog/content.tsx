@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import Button from "../../../ACE/Button/Button";
 
 interface Props {
   content: any;
@@ -43,13 +44,9 @@ const QuoteRenderer = (props: any) => {
 };
 
 const PageContent: React.FC<Props> = (props) => {
-  useEffect(() => {
-    console.log(props.content);
-  });
-
   return (
     <>
-      <div className="flex w-full flex-col space-y-4">
+      <div className="-mt-4 flex w-full flex-col space-y-4">
         {props.content.map((block: any) => {
           switch (block.type) {
             case "heading_1":
