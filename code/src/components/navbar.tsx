@@ -1,45 +1,301 @@
 import type { NextPage } from "next";
-import {useRouter} from "next/router";
-import {useState} from "react";
+import { useRouter } from "next/router";
+import { useState } from "react";
+import Badge from "../../ACE/Badge/Badge";
+import Button, { ButtonType } from "../../ACE/Button/Button";
 
 export const Navbar: NextPage = () => {
-  const router = useRouter()
-  const [menu, setMenu] = useState(false)
+  const router = useRouter();
+  const [menu, setMenu] = useState(false);
+  const [apps, setApps] = useState(false);
+  const [community, setCommunity] = useState(false);
 
   return (
-    <nav className="px-2 sm:px-4 py-2.5">
-      <div className="container flex flex-wrap justify-between items-center mx-auto cursor-pointer">
-        <a onClick={() => {router.push("/")}} className="flex items-center">
-          <div className="mr-2 p-2 rounded-full">
-              <img src="/pickup-logo-v2.svg" className="h-6 sm:h-9" alt="Pickup Logo" />
+    <nav className="m-4 flex items-center justify-between md:justify-around">
+      <a
+        onClick={() => {
+          router.push("/");
+        }}
+        className="flex items-center"
+      >
+        <div>
+          <Button
+            className="flex w-full cursor-pointer items-center justify-center rounded-lg p-2 hover:bg-gray-600"
+            click={() => {}}
+          >
+            <>
+              <div className="mr-2 rounded-full p-2">
+                <img
+                  src="/logo-w-text_2.svg"
+                  className="h-8"
+                  alt="Pickup Logo"
+                />
+              </div>
+            </>
+          </Button>
+        </div>
+      </a>
+      <ul className="hidden space-x-2 md:flex">
+        <li
+          className=""
+          onClick={() => {
+            setApps(!apps);
+            setCommunity(false);
+          }}
+        >
+          <div className="flex cursor-pointer items-center space-x-2 rounded-lg p-2 hover:bg-gray-600">
+            <div>Our Apps</div>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              strokeWidth={3}
+              stroke="currentColor"
+              className="h-4 w-4"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M19.5 8.25l-7.5 7.5-7.5-7.5"
+              />
+            </svg>
           </div>
-            <span className="self-center text-gray-300 text-2xl whitespace-nowrap">Pickup</span>
-        </a>
-        <button data-collapse-toggle="navbar-default" type="button" className="inline-flex items-center p-2 ml-3 text-sm rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2  text-gray-300 dark:hover:bg-gray-700 focus:ring-gray-600 cursor-pointer" aria-controls="navbar-default" aria-expanded="false" onClick={() => {setMenu(!menu)}}>
-          <span className="sr-only">Open main menu</span>
-          <svg className="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clipRule="evenodd"></path></svg>
-        </button>
-        <div className={`${menu ? "" : "hidden"} w-full md:block md:w-auto`} id="navbar-default">
-          <ul className="flex flex-col p-4 mt-4 rounded-lg md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0">
-            <li className="hover:bg-gray-600 rounded-lg cursor-pointer">
-              <a onClick={() => {router.push("/spaces")}} className="block py-2 pr-4 pl-3">Spaces</a>
-            </li>
-            <li className="hover:bg-gray-600 rounded-lg cursor-pointer">
-              <a onClick={() => {router.push("/blog")}} className="py-2 pr-4 pl-3 flex space-x-1 items-center">
-                <div>
-                  Blog 
-                </div>
-                <div className="text-sm text-orange-300">
-                  (beta)
-                </div>
-              </a>
-            </li>
-            <li className="hover:bg-gray-600 rounded-lg cursor-pointer">
-              <a onClick={() => {router.push("/company")}}  className="block py-2 pr-4 pl-3">Company</a>
-            </li>
-          </ul>
+          {!apps ? (
+            <></>
+          ) : (
+            <div className="absolute z-10 block translate-y-4 -translate-x-8 rounded-lg bg-gray-600 p-4 shadow-lg">
+              <ul className="flex flex-col space-y-2">
+                <li
+                  className="max-w-md cursor-pointer rounded-lg p-4 hover:bg-gray-700"
+                  onClick={() => {
+                    router.push("/");
+                  }}
+                >
+                  <div className="">Pickup Platform</div>
+                  <div className="text-sm text-gray-400">
+                    A community platform for building connections in your local
+                    area.
+                  </div>
+                </li>
+                <li className="max-w-md cursor-pointer rounded-lg p-4 hover:bg-gray-700">
+                  <a className="" href="https://quest.joinpickup.com">
+                    <div className="">The Daily Quest</div>
+                    <div className="text-sm text-gray-400">
+                      A daily challenge to check in with your support system.
+                    </div>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          )}
+        </li>
+        <li
+          className=""
+          onClick={() => {
+            setCommunity(!community);
+            setApps(false);
+          }}
+        >
+          <div className="flex cursor-pointer items-center space-x-2 rounded-lg p-2 hover:bg-gray-600">
+            <div>Community</div>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              strokeWidth={3}
+              stroke="currentColor"
+              className="h-4 w-4"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M19.5 8.25l-7.5 7.5-7.5-7.5"
+              />
+            </svg>
+          </div>
+          {!community ? (
+            <></>
+          ) : (
+            <div className="absolute z-10 block translate-y-4 -translate-x-8 rounded-lg bg-gray-600 p-4 shadow-lg">
+              <ul className="flex flex-col space-y-2">
+                <li
+                  className="max-w-md cursor-pointer rounded-lg p-4 hover:bg-gray-700"
+                  onClick={() => {
+                    router.push("/");
+                  }}
+                >
+                  <div className="flex items-center space-x-2">
+                    <div>Blog</div>
+                    <Badge text="Beta" />
+                  </div>
+                  <div className="text-sm text-gray-400">
+                    Articles about building community, the company and generally
+                    working to make the world better than we found it.
+                  </div>
+                </li>
+                <li className="max-w-md cursor-pointer rounded-lg p-4 hover:bg-gray-700">
+                  <a className="" href="https://quest.joinpickup.com">
+                    <div className="">Discord</div>
+                    <div className="text-sm text-gray-400">
+                      Find information about development, interact with the
+                      founders and suggest improvements.
+                    </div>
+                  </a>
+                </li>
+                <li className="max-w-md cursor-pointer rounded-lg p-4 hover:bg-gray-700">
+                  <a className="" href="https://quest.joinpickup.com">
+                    <div className="">Github</div>
+                    <div className="text-sm text-gray-400">
+                      If you want to take a look at the technology that we use.
+                      Most of our repositories are private right now, but
+                      hopefully we'll have open source projects soon.
+                    </div>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          )}
+        </li>
+        <li className="flex cursor-pointer items-center space-x-2 rounded-lg p-2 hover:bg-gray-600">
+          <div>Company Info</div>
+        </li>
+      </ul>
+      <div className="hidden space-x-2 lg:flex">
+        {/* <div className="min-w-fit">
+          <Button click={() => {}}>
+            <div>Log In</div>
+          </Button>
+        </div> */}
+        <div className="min-w-fit">
+          <Button type={ButtonType.CONTAINED} click={() => {}}>
+            <div>Join The Discord</div>
+          </Button>
         </div>
       </div>
+
+      <div className="flex md:hidden">
+        <Button
+          click={() => {
+            setCommunity(false);
+            setApps(false);
+            setMenu(!menu);
+          }}
+        >
+          <>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+              className="h-6 w-6"
+            >
+              <path
+                fillRule="evenodd"
+                d="M3 6.75A.75.75 0 013.75 6h16.5a.75.75 0 010 1.5H3.75A.75.75 0 013 6.75zM3 12a.75.75 0 01.75-.75h16.5a.75.75 0 010 1.5H3.75A.75.75 0 013 12zm0 5.25a.75.75 0 01.75-.75h16.5a.75.75 0 010 1.5H3.75a.75.75 0 01-.75-.75z"
+                clipRule="evenodd"
+              />
+            </svg>
+          </>
+        </Button>
+        {!menu ? (
+          <></>
+        ) : (
+          <div className="divider absolute left-0 z-10 m-4 flex translate-y-12 flex-col space-y-2 rounded-lg bg-gray-600 p-4 shadow-lg">
+            <div className="flex flex-col">
+              <div className="p-4 text-2xl">Our Apps</div>
+              <ul className="flex flex-col space-y-2">
+                <li
+                  className="max-w-md cursor-pointer rounded-lg p-4 hover:bg-gray-700"
+                  onClick={() => {
+                    router.push("/");
+                  }}
+                >
+                  <div className="">Pickup Platform</div>
+                  <div className="text-sm text-gray-400">
+                    A community platform for building connections in your local
+                    area.
+                  </div>
+                </li>
+                <li className="max-w-md cursor-pointer rounded-lg p-4 hover:bg-gray-700">
+                  <a className="" href="https://quest.joinpickup.com">
+                    <div className="">The Daily Quest</div>
+                    <div className="text-sm text-gray-400">
+                      A daily challenge to check in with your support system.
+                    </div>
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div>
+              <div className="p-4 text-2xl">Community</div>
+              <ul className="flex flex-col space-y-2">
+                <li
+                  className="max-w-md cursor-pointer rounded-lg p-4 hover:bg-gray-700"
+                  onClick={() => {
+                    router.push("/");
+                  }}
+                >
+                  <div className="flex items-center space-x-2">
+                    <div>Blog</div>
+                    <Badge text="Beta" />
+                  </div>
+                  <div className="text-sm text-gray-400">
+                    Articles about building community, the company and generally
+                    working to make the world better than we found it.
+                  </div>
+                </li>
+                <li className="max-w-md cursor-pointer rounded-lg p-4 hover:bg-gray-700">
+                  <a className="" href="https://quest.joinpickup.com">
+                    <div className="">Discord</div>
+                    <div className="text-sm text-gray-400">
+                      Find information about development, interact with the
+                      founders and suggest improvements.
+                    </div>
+                  </a>
+                </li>
+                <li className="max-w-md cursor-pointer rounded-lg p-4 hover:bg-gray-700">
+                  <a className="" href="https://quest.joinpickup.com">
+                    <div className="">Github</div>
+                    <div className="text-sm text-gray-400">
+                      If you want to take a look at the technology that we use.
+                      Most of our repositories are private right now, but
+                      hopefully we'll have open source projects soon.
+                    </div>
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div>
+              <div className="p-4 text-2xl">Company</div>
+              <ul className="flex flex-col space-y-2">
+                <li
+                  className="max-w-md cursor-pointer rounded-lg p-4 hover:bg-gray-700"
+                  onClick={() => {
+                    router.push("/");
+                  }}
+                >
+                  <div className="flex items-center space-x-2">
+                    <div>Pickup LLC</div>
+                  </div>
+                  <div className="text-sm text-gray-400">
+                    We believe that the system is broken and that its up to everyon to build it back better.
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div>
+              <Button type={ButtonType.CONTAINED} click={() => {}}>
+                <div>
+                  Get Started
+                </div>
+              </Button>
+            </div>
+          </div>
+        )}
+      </div>
     </nav>
-  )
-}
+  );
+};
+
+let menu = "";
+let setMenu = Function();
+let temp = <div></div>;

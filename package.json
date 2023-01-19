@@ -1,9 +1,0 @@
-{
-  "devDependencies": {
-    "@types/node": "^18.11.8"
-  },
-  "dependencies": {
-    "notion-client": "^6.15.6",
-    "notion-utils": "^6.15.6"
-  }
-}
