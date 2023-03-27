@@ -32,7 +32,7 @@ export const MainContent = () => {
       <div className="mt-12 flex flex-col items-center space-y-4 md:w-128">
         <div className="flex w-full flex-col space-y-4">
           <div className="flex text-3xl md:w-128 md:text-6xl">
-            Looking for community?
+            Looking for a fun group of people?
           </div>
           <div className="flex text-base font-medium md:w-128 md:text-xl">
             Pickup is an app designed to build community from common interests.
