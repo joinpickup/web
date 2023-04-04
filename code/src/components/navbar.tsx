@@ -3,7 +3,6 @@ import { useRouter } from "next/router";
 import { useState } from "react";
 import Badge from "../../ACE/Badge/Badge";
 import Button, { ButtonType } from "../../ACE/Button/Button";
-import Input from "../../ACE/Input/Input";
 
 export const Navbar: NextPage = () => {
   // router
@@ -336,7 +335,3 @@ export const Navbar: NextPage = () => {
     </nav>
   );
 };
-
-let menu = "";
-let setMenu = Function();
-let temp = <div></div>;
