@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: web-v3
-          image: joinpickup/web-v3:$TAG
+          image: joinpickup/web:$TAG
           envFrom:
             - secretRef:
                 name: web-v3
