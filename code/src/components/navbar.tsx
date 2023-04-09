@@ -70,10 +70,9 @@ export function Navbar() {
                 Products
               </div>
               <ul className="flex flex-col space-y-1">
-                <motion.li
-                  whileTap={{ scale: 0.9 }}
-                >
-                  <a href="/products/local" 
+                <motion.li whileTap={{ scale: 0.9 }}>
+                  <a
+                    href="/products/local"
                     className="flex flex-col w-full cursor-pointer justify-start rounded-lg p-2 hover:bg-[#E4F0D1]"
                   >
                     <div className="text-lg">Local</div>
@@ -95,10 +94,9 @@ export function Navbar() {
                 Collective
               </div>
               <ul className="flex flex-col space-y-2">
-                <motion.li
-                  whileTap={{ scale: 0.9 }}
-                >
-                  <a href="/collective/premium" 
+                <motion.li whileTap={{ scale: 0.9 }}>
+                  <a
+                    href="/collective/premium"
                     className="flex flex-col w-full cursor-pointer justify-start rounded-lg p-2 hover:bg-[#E4F0D1]"
                   >
                     <div className="text-lg">Premium</div>
@@ -107,10 +105,9 @@ export function Navbar() {
                     </div>
                   </a>
                 </motion.li>
-                <motion.li
-                  whileTap={{ scale: 0.9 }}
-                >
-                  <a href="/collective/blog" 
+                <motion.li whileTap={{ scale: 0.9 }}>
+                  <a
+                    href="/collective/blog"
                     className="flex flex-col w-full cursor-pointer justify-start rounded-lg p-2 hover:bg-[#E4F0D1]"
                   >
                     <div className="text-lg">Blog</div>
@@ -119,9 +116,7 @@ export function Navbar() {
                     </div>
                   </a>
                 </motion.li>
-                <motion.li
-                  whileTap={{ scale: 0.9 }}
-                >
+                <motion.li whileTap={{ scale: 0.9 }}>
                   <a
                     href="https://discord.gg/NV4AwYVz5X"
                     target="_blank"
@@ -146,10 +141,9 @@ export function Navbar() {
                 Company
               </div>
               <ul className="flex flex-col space-y-2">
-                <motion.li
-                  whileTap={{ scale: 0.9 }}
-                >
-                  <a href="/company/mission" 
+                <motion.li whileTap={{ scale: 0.9 }}>
+                  <a
+                    href="/company/mission"
                     className="flex flex-col w-full cursor-pointer justify-start rounded-lg p-2 hover:bg-[#E4F0D1]"
                   >
                     <div className="text-lg">Mission</div>
@@ -158,10 +152,9 @@ export function Navbar() {
                     </div>
                   </a>
                 </motion.li>
-                <motion.li
-                  whileTap={{ scale: 0.9 }}
-                >
-                  <a href="/company/team" 
+                <motion.li whileTap={{ scale: 0.9 }}>
+                  <a
+                    href="/company/team"
                     className="flex flex-col w-full cursor-pointer justify-start rounded-lg p-2 hover:bg-[#E4F0D1]"
                   >
                     <div className="text-lg">Team</div>
@@ -218,10 +211,9 @@ export function Navbar() {
                 Products
               </div>
               <ul className="flex flex-col space-y-1">
-                <motion.li
-                  whileTap={{ scale: 0.9 }}
-                >
-                  <a href="/products/local" 
+                <motion.li whileTap={{ scale: 0.9 }}>
+                  <a
+                    href="/products/local"
                     className="flex flex-col w-full cursor-pointer justify-start rounded-lg p-2 hover:bg-[#E4F0D1]"
                   >
                     <div className="text-lg">Local</div>
@@ -278,10 +270,9 @@ export function Navbar() {
                 Collective
               </div>
               <ul className="flex flex-col space-y-2">
-                <motion.li
-                  whileTap={{ scale: 0.9 }}
-                >
-                  <a href="/collective/premium" 
+                <motion.li whileTap={{ scale: 0.9 }}>
+                  <a
+                    href="/collective/premium"
                     className="flex flex-col w-full cursor-pointer justify-start rounded-lg p-2 hover:bg-[#E4F0D1]"
                   >
                     <div className="text-lg">Premium</div>
@@ -290,10 +281,9 @@ export function Navbar() {
                     </div>
                   </a>
                 </motion.li>
-                <motion.li
-                  whileTap={{ scale: 0.9 }}
-                >
-                  <a href="/collective/blog" 
+                <motion.li whileTap={{ scale: 0.9 }}>
+                  <a
+                    href="/collective/blog"
                     className="flex flex-col w-full cursor-pointer justify-start rounded-lg p-2 hover:bg-[#E4F0D1]"
                   >
                     <div className="text-lg">Blog</div>
@@ -302,9 +292,7 @@ export function Navbar() {
                     </div>
                   </a>
                 </motion.li>
-                <motion.li
-                  whileTap={{ scale: 0.9 }}
-                >
+                <motion.li whileTap={{ scale: 0.9 }}>
                   <a
                     href="https://discord.gg/NV4AwYVz5X"
                     target="_blank"
@@ -364,10 +352,9 @@ export function Navbar() {
                 Company
               </div>
               <ul className="flex flex-col space-y-2">
-                <motion.li
-                  whileTap={{ scale: 0.9 }}
-                >
-                  <a href="/company/mission" 
+                <motion.li whileTap={{ scale: 0.9 }}>
+                  <a
+                    href="/company/mission"
                     className="flex flex-col w-full cursor-pointer justify-start rounded-lg p-2 hover:bg-[#E4F0D1]"
                   >
                     <div className="text-lg">Mission</div>
@@ -376,10 +363,9 @@ export function Navbar() {
                     </div>
                   </a>
                 </motion.li>
-                <motion.li
-                  whileTap={{ scale: 0.9 }}
-                >
-                  <a href="/company/team" 
+                <motion.li whileTap={{ scale: 0.9 }}>
+                  <a
+                    href="/company/team"
                     className="flex flex-col w-full cursor-pointer justify-start rounded-lg p-2 hover:bg-[#E4F0D1]"
                   >
                     <div className="text-lg">Team</div>

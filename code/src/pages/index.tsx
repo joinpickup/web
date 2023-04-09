@@ -41,7 +41,7 @@ function MainContent() {
         className="m-4 p-8 w-full rounded-xl bg-orange-200 text-[#333333] shadow-lg flex md:flex-row flex-col md:space-x-2 space-y-2 items-center"
       >
         <div className="order-2 md:order-1 flex flex-col space-y-2">
-          <div className="text-4xl">A company controlled by the people</div>
+          <div className="text-4xl">A company controlled by its customers</div>
           <div className="text-xl">
             The Pickup Collective is a company designed to put people over
             profit. Like a co-op Pickup is completely owned by the people who
