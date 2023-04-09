@@ -8,7 +8,7 @@ body {
   margin: 0;
   font-family: "Nunito", sans-serif;
   font-weight: bold;
-  @apply bg-green-300 text-gray-300;
+  @apply bg-[#F7E8DE] text-black;
 }
 
 a {

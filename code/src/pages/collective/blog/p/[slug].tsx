@@ -1,10 +1,10 @@
 import { useRouter } from "next/router";
 import { useEffect } from "react";
-import Button from "../../../../ACE/Button/Button";
-import PageContent from "../../../components/blog/content";
-import { Navbar } from "../../../components/navbar";
-import { getBlocks, getBlogPosts, getPage } from "../../../lib/notion";
-import { BlogPost } from "../../../model/blog";
+import Button from "../../../../../ACE/Button/Button";
+import PageContent from "../../../../components/blog/content";
+import { Navbar } from "../../../../components/navbar";
+import { getBlocks, getBlogPosts, getPage } from "../../../../lib/notion";
+import { BlogPost } from "../../../../model/blog";
 
 export async function getServerSideProps(context: any) {
   let posts = await getBlogPosts();

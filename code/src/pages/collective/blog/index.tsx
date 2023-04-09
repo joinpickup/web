@@ -1,8 +1,8 @@
 import { useEffect } from "react";
-import BlogCard from "../../components/blog/card";
-import { getBlogPosts, getDatabase } from "../../lib/notion";
-import { BlogPost } from "../../model/blog";
-import { Navbar } from "../../components/navbar";
+import BlogCard from "../../../components/blog/card";
+import { getBlogPosts, getDatabase } from "../../../lib/notion";
+import { BlogPost } from "../../../model/blog";
+import { Navbar } from "../../../components/navbar";
 
 export async function getServerSideProps() {
   let posts = await getBlogPosts();
