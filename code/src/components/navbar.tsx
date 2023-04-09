@@ -32,8 +32,8 @@ export function Navbar() {
   function buildAllModal() {
     return (
       <div className="fixed inset-0 bg-black/60 flex items-center justify-center z-50 overscroll-x-none overscroll-y-none md:inset-0">
-        <div className="w-2/3 bg-white z-10 absolute top-0 right-0 m-4 rounded-lg shadow-2xl flex">
-          <div className="w-full flex flex-col space-y-4 p-4">
+        <div className="w-2/3 h-5/6 bg-white z-10 absolute top-0 right-0 m-4 rounded-lg shadow-2xl flex">
+          <div className="w-full flex flex-col space-y-4 p-4 overflow-auto">
             <div className="flex justify-end">
               <motion.button
                 whileHover={{ scale: 1.08 }}

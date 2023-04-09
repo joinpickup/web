@@ -27,7 +27,11 @@ export default function Local() {
 function MainContent() {
   return (
     <main className="">
-      <div className="m-4 flex flex-col items-center space-y-4 p-4"></div>
+      <div className="m-4 flex flex-col items-center space-y-4 p-4">
+        <div className="text-4xl">
+          The Digital Bulliten Board
+        </div>
+      </div>
     </main>
   );
 }
