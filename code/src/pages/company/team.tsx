@@ -75,7 +75,7 @@ function TeamMemberCard( {
   }) {
   return (
     <motion.div 
-      className="flex-col w-96 rounded-lg bg-orange-200 space-y-2 shadow-xl"
+      className="flex-col md:w-96 w-full rounded-lg bg-orange-200 space-y-2 shadow-xl"
       whileHover={{scale: 1.02}}
     >
       <div 
