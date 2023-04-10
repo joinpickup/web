@@ -32,29 +32,29 @@ function MainContent() {
       <div className="m-4 flex flex-col space-y-4 p-4">
         <div className="text-3xl">The Team</div>
         <div className="flex flex-col md:flex-row space-y-2 md:space-x-2 md:space-y-0">
-          <TeamMemberCard  
+          <TeamMemberCard
             name="Andrew"
             email="acohen@joinpickup.com"
             title="CEO/CTO"
-            image="/img/team/andrew-funny.png" 
+            image="/img/team/andrew-funny.png"
           />
-          <TeamMemberCard  
+          <TeamMemberCard
             name="Brian"
             email="bcorrell@joinpickup.com"
             title="COO/CFO"
-            image="/img/team/brian.png" 
+            image="/img/team/brian.png"
           />
-          <TeamMemberCard  
+          <TeamMemberCard
             name="Stefanie"
             email="solivares@joinpickup.com"
             title="Co VP of Product/Media"
-            image="/img/team/stef.png" 
+            image="/img/team/stef.png"
           />
-          <TeamMemberCard  
+          <TeamMemberCard
             name="Jason"
             email="jolivares@joinpickup.com"
             title="Co VP of Product/Media"
-            image="/img/team/jason.png" 
+            image="/img/team/jason.png"
           />
         </div>
       </div>
@@ -62,33 +62,31 @@ function MainContent() {
   );
 }
 
-function TeamMemberCard( {
-    image, 
-    title,
-    name, 
-    email,
-  }: {
-    image: string,
-    title: string,
-    name: string,
-    email: string,
-  }) {
+function TeamMemberCard({
+  image,
+  title,
+  name,
+  email,
+}: {
+  image: string;
+  title: string;
+  name: string;
+  email: string;
+}) {
   return (
-    <motion.div 
+    <motion.div
       className="flex-col md:w-96 w-full rounded-lg bg-orange-200 space-y-2 shadow-xl"
-      whileHover={{scale: 1.02}}
+      whileHover={{ scale: 1.02 }}
     >
-      <div 
-        className="p-4  rounded-lg flex-col space-y-2"
-      >
-        <img
-          src={image}
-          className="w-full rounded-xl"
-        ></img>
+      <div className="p-4  rounded-lg flex-col space-y-2">
+        <img src={image} className="w-full rounded-xl"></img>
         <div className="text-2xl md:text-3xl">{name}</div>
         <div className="text-md md:text-lg">{title}</div>
         <div className="flex space-x-2">
-          <a href={`mailto: ${email}`} className="p-2 rounded-full bg-orange-100 cursor-pointer">
+          <a
+            href={`mailto: ${email}`}
+            className="p-2 rounded-full bg-orange-100 cursor-pointer"
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"

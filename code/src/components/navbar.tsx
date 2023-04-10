@@ -1,5 +1,3 @@
-import type { NextPage } from "next";
-import Link from "next/link";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import { useMediaQuery } from "../lib/useMediaQuery";
@@ -384,7 +382,7 @@ export function Navbar() {
 
   return (
     <>
-      <nav className="w-full p-4 flex justify-between items-center">
+      <nav className="w-full p-4 text-xl flex justify-between items-center">
         <motion.a
           whileHover={{ scale: 1.08 }}
           whileTap={{ scale: 0.9 }}
