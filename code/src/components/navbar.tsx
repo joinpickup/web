@@ -434,7 +434,7 @@ export function Navbar() {
                   : ""
               } flex items-center space-x-2 hover:text-orange-500 cursor-pointer`}
             >
-              Product
+              Products
             </motion.button>
             <svg
               className="fill-orange-500"

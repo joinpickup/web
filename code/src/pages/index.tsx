@@ -34,10 +34,10 @@ export default function Home() {
 
 function MainContent() {
   return (
-    <main className="w-full h-full flex items-center justify-center">
+    <main className="w-full h-full flex flex-col">
       {/* <div className="h-20"></div> */}
       <motion.div
-        className="m-4 md:mx-20 p-8 w-full rounded-xl bg-orange-200 text-[#333333] shadow-lg flex md:flex-row flex-col md:space-x-2 space-y-2 items-center"
+        className="m-4 md:mx-20 p-8 rounded-xl bg-orange-200 text-[#333333] shadow-lg flex md:flex-row flex-col md:space-x-2 space-y-2 items-center"
       >
         <div className="order-2 md:order-1 flex flex-col space-y-2">
           <div className="text-4xl md:text-5xl">A company controlled by its customers</div>

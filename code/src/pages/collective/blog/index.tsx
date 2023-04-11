@@ -22,11 +22,16 @@ const Blog: React.FC<Props> = (props) => {
     <>
       <Navbar />
       <main className="flex flex-col items-center space-y-4">
-        <ul className="flex flex-col space-y-4 p-4 md:w-128 w-full">
-          {props.posts.map((post) => {
-            return <BlogCard post={post} key={post.slug} />;
-          })}
-        </ul>
+        <div className="text-3xl">
+          Pickup Blog
+        </div>
+        <div>
+          <ul className="flex flex-col p-4 md:w-128 w-full space-y-4">
+            {props.posts.map((post) => {
+              return <BlogCard post={post} key={post.slug} />;
+            })}
+          </ul>
+        </div>
       </main>
     </>
   );
