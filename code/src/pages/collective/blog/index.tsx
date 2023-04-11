@@ -1,24 +1,20 @@
-import { useEffect } from "react";
 import BlogCard from "../../../components/blog/card";
-import { getBlogPosts, getDatabase } from "../../../lib/notion";
 import { BlogPost } from "../../../model/blog";
 import { Navbar } from "../../../components/navbar";
+import { getAllPosts } from "../../../lib/md";
 
 export async function getServerSideProps() {
-  let posts = await getBlogPosts();
-  const database = await getDatabase(process.env.NOTION_PAGE_ID as string);
+  let posts = await getAllPosts("/src/posts/");
 
   return {
     props: {
       posts,
-      database,
     },
   };
 }
 
 interface Props {
   posts: BlogPost[];
-  database: any;
 }
 
 const Blog: React.FC<Props> = (props) => {
@@ -26,9 +22,9 @@ const Blog: React.FC<Props> = (props) => {
     <>
       <Navbar />
       <main className="flex flex-col items-center space-y-4">
-        <ul className="flex flex-col space-y-4 p-4 md:w-128">
+        <ul className="flex flex-col space-y-4 p-4 md:w-128 w-full">
           {props.posts.map((post) => {
-            return <BlogCard post={post} key={post.id} />;
+            return <BlogCard post={post} key={post.slug} />;
           })}
         </ul>
       </main>

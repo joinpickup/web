@@ -1,23 +1,19 @@
 import { useRouter } from "next/router";
 import { useEffect } from "react";
 import Button from "../../../../../ACE/Button/Button";
-import PageContent from "../../../../components/blog/content";
 import { Navbar } from "../../../../components/navbar";
-import { getBlocks, getBlogPosts, getPage } from "../../../../lib/notion";
 import { BlogPost } from "../../../../model/blog";
+import { getAllPosts } from "../../../../lib/md";
+import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
 
 export async function getServerSideProps(context: any) {
-  let posts = await getBlogPosts();
+  let posts = await getAllPosts("/src/posts/");
   let post = posts.find((post) => post.slug == context.params.slug) ?? null;
-  let content = {};
-  if (post) {
-    content = await getBlocks(post?.id as string);
-  }
 
   return {
     props: {
       post,
-      content,
     },
   };
 }
@@ -33,7 +29,7 @@ const BlogPage: React.FC<Props> = (props) => {
   useEffect(() => {
     if (!props.post) {
       // todo: handle redirect
-      router.push("/blog");
+      router.push("/collective/blog");
     }
   }, []);
 
@@ -45,7 +41,7 @@ const BlogPage: React.FC<Props> = (props) => {
           <div className="w-fit">
             <a
               className="flex cursor-pointer items-center space-x-2 text-orange-400 hover:underline"
-              href="/blog"
+              href="/collective/blog"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -67,12 +63,16 @@ const BlogPage: React.FC<Props> = (props) => {
             <div className="flex items-center space-x-2 text-xl">
               <div className="text-md">{props.post?.author}</div>
               <div className="text-sm text-gray-400">
-                {props.post?.published.toString()}
+                {props.post?.publishedDate.toString()}
               </div>
             </div>
           </div>
-          <div className="flex w-full">
-            <PageContent content={props.content} />
+          <div className="flex flex-col w-full space-y-2 markdown">
+            <ReactMarkdown
+              remarkPlugins={[remarkGfm]}
+            >
+              {props.post?.content as string}
+            </ReactMarkdown>
           </div>
         </div>
       </main>

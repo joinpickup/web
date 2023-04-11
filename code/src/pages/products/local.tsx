@@ -35,7 +35,7 @@ function MainContent() {
           <div className="text-4xl md:text-5xl">
             <span className="underline decoration-gray-700 decoration-2 underline-offset-2">Local</span> is your digital bulletin board</div>
           <div className="text-base md:text-lg">
-            Get connected to your local community by finding what is happening nearby.
+            Get connected to your local community by finding what{"'"}s happening nearby.
           </div>
           <MailchimpEmail />
         </div>

@@ -30,7 +30,9 @@ function MainContent() {
   return (
     <main className="">
       <div className="m-4 flex flex-col space-y-4 p-4">
-        <div className="text-3xl">The Team</div>
+        <div className="text-3xl">
+          The Team
+        </div>
         <div className="flex flex-col md:flex-row space-y-2 md:space-x-2 md:space-y-0">
           <TeamMemberCard
             name="Andrew"
@@ -76,7 +78,6 @@ function TeamMemberCard({
   return (
     <motion.div
       className="flex-col md:w-96 w-full rounded-lg bg-orange-200 space-y-2 shadow-xl"
-      whileHover={{ scale: 1.02 }}
     >
       <div className="p-4  rounded-lg flex-col space-y-2">
         <img src={image} className="w-full rounded-xl"></img>

@@ -92,7 +92,7 @@ export function Navbar() {
                 Collective
               </div>
               <ul className="flex flex-col space-y-2">
-                <motion.li whileTap={{ scale: 0.9 }}>
+                {/* <motion.li whileTap={{ scale: 0.9 }}>
                   <a
                     href="/collective/premium"
                     className="flex flex-col w-full cursor-pointer justify-start rounded-lg p-2 hover:bg-[#E4F0D1]"
@@ -102,7 +102,7 @@ export function Navbar() {
                       What you get for being a member
                     </div>
                   </a>
-                </motion.li>
+                </motion.li> */}
                 <motion.li whileTap={{ scale: 0.9 }}>
                   <a
                     href="/collective/blog"
@@ -139,7 +139,7 @@ export function Navbar() {
                 Company
               </div>
               <ul className="flex flex-col space-y-2">
-                <motion.li whileTap={{ scale: 0.9 }}>
+                {/* <motion.li whileTap={{ scale: 0.9 }}>
                   <a
                     href="/company/mission"
                     className="flex flex-col w-full cursor-pointer justify-start rounded-lg p-2 hover:bg-[#E4F0D1]"
@@ -149,7 +149,7 @@ export function Navbar() {
                       Learn about the company values
                     </div>
                   </a>
-                </motion.li>
+                </motion.li> */}
                 <motion.li whileTap={{ scale: 0.9 }}>
                   <a
                     href="/company/team"
@@ -268,7 +268,7 @@ export function Navbar() {
                 Collective
               </div>
               <ul className="flex flex-col space-y-2">
-                <motion.li whileTap={{ scale: 0.9 }}>
+                {/* <motion.li whileTap={{ scale: 0.9 }}>
                   <a
                     href="/collective/premium"
                     className="flex flex-col w-full cursor-pointer justify-start rounded-lg p-2 hover:bg-[#E4F0D1]"
@@ -278,7 +278,7 @@ export function Navbar() {
                       What you get for being a member
                     </div>
                   </a>
-                </motion.li>
+                </motion.li> */}
                 <motion.li whileTap={{ scale: 0.9 }}>
                   <a
                     href="/collective/blog"
@@ -350,7 +350,7 @@ export function Navbar() {
                 Company
               </div>
               <ul className="flex flex-col space-y-2">
-                <motion.li whileTap={{ scale: 0.9 }}>
+                {/* <motion.li whileTap={{ scale: 0.9 }}>
                   <a
                     href="/company/mission"
                     className="flex flex-col w-full cursor-pointer justify-start rounded-lg p-2 hover:bg-[#E4F0D1]"
@@ -360,7 +360,7 @@ export function Navbar() {
                       Learn about the company values
                     </div>
                   </a>
-                </motion.li>
+                </motion.li> */}
                 <motion.li whileTap={{ scale: 0.9 }}>
                   <a
                     href="/company/team"
