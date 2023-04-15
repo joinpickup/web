@@ -403,7 +403,7 @@ export function Navbar() {
             onClick={() => {
               setAllModalOpen(true);
             }}
-            className="rounded-lg p-1 hover:bg-orange-200 hover:text-gray-700 cursor-pointer"
+            className="md:hidden rounded-lg p-1 hover:bg-orange-200 hover:text-gray-700 cursor-pointer"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -421,7 +421,7 @@ export function Navbar() {
             </svg>
           </motion.button>
         ) : (
-          <div className="flex space-x-2 items-center">
+          <div className="hidden md:flex space-x-2 items-center">
             <motion.button
               whileHover={{ scale: 1.08 }}
               whileTap={{ scale: 0.9 }}
