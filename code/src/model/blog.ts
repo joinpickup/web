@@ -1,9 +1,10 @@
 export interface BlogPost {
   author: string;
   title: string;
-  published: string;
+  isPublished: boolean;
+  publishedDate: Date;
   slug: string;
   tags: string[];
-  id: string;
-  summary: string;
+  description: string;
+  content: string;
 }
