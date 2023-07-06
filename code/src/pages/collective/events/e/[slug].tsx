@@ -6,20 +6,21 @@ import { BlogPost } from "../../../../model/blog";
 import { getAllPosts } from "../../../../lib/md";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
+import { EventPost } from "../../../../model/event";
 
 export async function getServerSideProps(context: any) {
-  let posts = await getAllPosts("/src/content/posts/");
-  let post = posts.find((post) => post.slug == context.params.slug) ?? null;
+  let events = await getAllPosts("/src/content/events/");
+  let event = events.find((event) => event.slug == context.params.slug) ?? null;
 
   return {
     props: {
-      post,
+      event,
     },
   };
 }
 
 interface Props {
-  post: BlogPost | null;
+  event: EventPost | null;
   content: any;
 }
 
@@ -27,9 +28,9 @@ const BlogPage: React.FC<Props> = (props) => {
   const router = useRouter();
 
   useEffect(() => {
-    if (!props.post) {
+    if (!props.event) {
       // todo: handle redirect
-      router.push("/collective/blog");
+      router.push("/collective/events");
     }
   }, []);
 
@@ -41,7 +42,7 @@ const BlogPage: React.FC<Props> = (props) => {
           <div className="w-fit">
             <a
               className="flex cursor-pointer items-center space-x-2 text-orange-400 hover:underline"
-              href="/collective/blog"
+              href="/collective/events"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -55,23 +56,18 @@ const BlogPage: React.FC<Props> = (props) => {
                   clipRule="evenodd"
                 />
               </svg>
-              <div> All Posts </div>
+              <div> All Events</div>
             </a>
           </div>
           <div className="mb-2 flex flex-col space-y-2">
-            <div className="flex text-6xl font-bold">{props.post?.title}</div>
-            <div className="flex items-center space-x-2 text-xl">
-              <div className="text-md">{props.post?.author}</div>
-              <div className="text-sm text-gray-400">
-                {props.post?.publishedDate.toString()}
-              </div>
-            </div>
+            <div className="flex text-6xl font-bold">{props.event?.title}</div>
+            <img src={props.event?.image} className="rounded-lg bg-cover object-cover object-top w-full"></img>
           </div>
           <div className="flex flex-col w-full space-y-2 markdown">
             <ReactMarkdown
               remarkPlugins={[remarkGfm]}
             >
-              {props.post?.content as string}
+              {props.event?.content as string}
             </ReactMarkdown>
           </div>
         </div>

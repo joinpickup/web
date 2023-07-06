@@ -2,19 +2,21 @@ import BlogCard from "../../../components/blog/card";
 import { BlogPost } from "../../../model/blog";
 import { Navbar } from "../../../components/navbar";
 import { getAllPosts } from "../../../lib/md";
+import EventCard from "../../../components/events/card";
+import { EventPost } from "../../../model/event";
 
 export async function getServerSideProps() {
-  let posts = await getAllPosts("/src/content/posts");
+  let events = await getAllPosts("/src/content/events/");
 
   return {
     props: {
-      posts,
+      events,
     },
   };
 }
 
 interface Props {
-  posts: BlogPost[];
+  events: EventPost[];
 }
 
 const Blog: React.FC<Props> = (props) => {
@@ -23,12 +25,12 @@ const Blog: React.FC<Props> = (props) => {
       <Navbar />
       <main className="flex flex-col items-center space-y-4">
         <div className="text-3xl">
-          Pickup Blog
+          Pickup sponsored events
         </div>
         <div>
           <ul className="flex flex-col p-4 md:w-128 w-full space-y-4">
-            {props.posts.map((post) => {
-              return <BlogCard post={post} key={post.slug} />;
+            {props.events.map((event) => {
+              return <EventCard event={event} key={event.slug} />;
             })}
           </ul>
         </div>

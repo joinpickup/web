@@ -35,7 +35,7 @@ export function Navbar() {
             <div className="flex justify-end">
               <motion.button
                 whileHover={{ scale: 1.08 }}
-                whileTap={{ scale: 0.9 }}
+                whileTap={{ scale: 0.8 }}
                 onClick={() => {
                   setAllModalOpen(false);
                 }}
@@ -105,6 +105,17 @@ export function Navbar() {
                 </motion.li> */}
                 <motion.li whileTap={{ scale: 0.9 }}>
                   <a
+                    href="/collective/events"
+                    className="flex flex-col w-full cursor-pointer justify-start rounded-lg p-2 hover:bg-[#E4F0D1]"
+                  >
+                    <div className="text-lg">Events</div>
+                    <div className="text-sm text-gray-500">
+                      Get involved in your community
+                    </div>
+                  </a>
+                </motion.li>
+                <motion.li whileTap={{ scale: 0.9 }}>
+                  <a
                     href="/collective/blog"
                     className="flex flex-col w-full cursor-pointer justify-start rounded-lg p-2 hover:bg-[#E4F0D1]"
                   >
@@ -161,6 +172,18 @@ export function Navbar() {
                     </div>
                   </a>
                 </motion.li>
+                <motion.li whileTap={{ scale: 0.9 }}>
+                  <a
+                    href="https://instagram.com/joinpickup"
+                    target="_blank"
+                    className="flex flex-col w-full cursor-pointer justify-start rounded-lg p-2 hover:bg-[#E4F0D1]"
+                  >
+                    <div className="text-lg">Instagram</div>
+                    <div className="text-sm text-gray-500">
+                      Find out about what{"'"}s happening next
+                    </div>
+                  </a>
+                </motion.li>
               </ul>
             </div>
           </div>
@@ -176,7 +199,7 @@ export function Navbar() {
           <div className="w-full flex flex-col space-y-4 p-4">
             <div className="flex justify-end">
               <motion.button
-                whileTap={{ scale: 0.9 }}
+                whileTap={{ scale: 0.8 }}
                 onClick={() => {
                   setProductModalOpen(false);
                 }}
@@ -235,7 +258,7 @@ export function Navbar() {
           <div className="w-full flex flex-col space-y-4 p-4">
             <div className="flex justify-end">
               <motion.button
-                whileTap={{ scale: 0.9 }}
+                whileTap={{ scale: 0.8 }}
                 onClick={() => {
                   setCollectiveModalOpen(false);
                 }}
@@ -281,6 +304,17 @@ export function Navbar() {
                 </motion.li> */}
                 <motion.li whileTap={{ scale: 0.9 }}>
                   <a
+                    href="/collective/events"
+                    className="flex flex-col w-full cursor-pointer justify-start rounded-lg p-2 hover:bg-[#E4F0D1]"
+                  >
+                    <div className="text-lg">Events</div>
+                    <div className="text-sm text-gray-500">
+                      Get involved in your community
+                    </div>
+                  </a>
+                </motion.li>
+                <motion.li whileTap={{ scale: 0.9 }}>
+                  <a
                     href="/collective/blog"
                     className="flex flex-col w-full cursor-pointer justify-start rounded-lg p-2 hover:bg-[#E4F0D1]"
                   >
@@ -317,7 +351,7 @@ export function Navbar() {
           <div className="w-full flex flex-col space-y-4 p-4">
             <div className="flex justify-end">
               <motion.button
-                whileTap={{ scale: 0.9 }}
+                whileTap={{ scale: 0.8 }}
                 onClick={() => {
                   setCompanyModalOpen(false);
                 }}
@@ -369,6 +403,18 @@ export function Navbar() {
                     <div className="text-lg">Team</div>
                     <div className="text-sm text-gray-500">
                       Find out more information about the team begin Pickup
+                    </div>
+                  </a>
+                </motion.li>
+                <motion.li whileTap={{ scale: 0.9 }}>
+                  <a
+                    href="https://instagram.com/joinpickup"
+                    target="_blank"
+                    className="flex flex-col w-full cursor-pointer justify-start rounded-lg p-2 hover:bg-[#E4F0D1]"
+                  >
+                    <div className="text-lg">Instagram</div>
+                    <div className="text-sm text-gray-500">
+                      Find out about what{"'"}s happening next
                     </div>
                   </a>
                 </motion.li>

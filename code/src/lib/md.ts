@@ -2,6 +2,7 @@ import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
 import { BlogPost } from "../model/blog";
+import { EventPost } from "../model/event";
 
 export function getPath(folder:string) {
     return path.join(process.cwd(), `/${folder}`);
@@ -22,7 +23,7 @@ export function getAllPosts(folder:string) {
         })
         .map((fileName) => {
             const source = getFileContent(fileName, folder);
-            const slug = fileName.replace(/\\.md?$/, "");
+            const slug = fileName.replace(/\.md$/, "");
             const { data, content } = matter(source);
             return {
                 ...data,
@@ -31,6 +32,29 @@ export function getAllPosts(folder:string) {
             } as BlogPost
         })
         .sort((a, b) => {
-            return new Date(a.publishedDate).getTime() - new Date(b.publishedDate).getTime()
+            return new Date(b.publishedDate).getTime() - new Date(a.publishedDate).getTime()
+        });
+};
+
+export function getAllEvents(folder:string) {
+    const postsPath = getPath(folder)
+
+    return fs
+        .readdirSync(postsPath)
+        .filter((path) => {
+            return /\.md$/.test(path)
+        })
+        .map((fileName) => {
+            const source = getFileContent(fileName, folder);
+            const slug = fileName.replace(/\.md$/, "");
+            const { data, content } = matter(source);
+            return {
+                ...data,
+                slug: slug,
+                content: content,
+            } as EventPost
+        })
+        .sort((a, b) => {
+            return new Date(a.eventDate).getTime() - new Date(b.eventDate).getTime()
         });
 };
