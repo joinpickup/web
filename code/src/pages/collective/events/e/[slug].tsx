@@ -61,6 +61,17 @@ const BlogPage: React.FC<Props> = (props) => {
           </div>
           <div className="mb-2 flex flex-col space-y-2">
             <div className="flex text-6xl font-bold">{props.event?.title}</div>
+          <div className="m-2 text-md">
+
+            <a
+              className="flex cursor-pointer items-center space-x-2 text-orange-400 hover:underline text-xl"
+              href={props.event?.rsvpLink}
+              target="_blank"
+            >
+
+              <div>RSVP</div>
+            </a>
+          </div>
             <img src={props.event?.image} className="rounded-lg bg-cover object-cover object-top w-full"></img>
           </div>
           <div className="flex flex-col w-full space-y-2 markdown">
