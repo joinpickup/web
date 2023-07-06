@@ -10,6 +10,7 @@ export function getPath(folder:string) {
 
 export function getFileContent(filename:string, folder:string) {
     const postsPath = getPath(folder)
+    console.log(postsPath)
     return fs.readFileSync(path.join(postsPath, filename), "utf8");
 };
 

@@ -60,7 +60,7 @@ const BlogPage: React.FC<Props> = (props) => {
             </a>
           </div>
           <div className="mb-2 flex flex-col space-y-2">
-            <div className="flex text-6xl font-bold">{props.event?.title}</div>
+            <div className="flex text-4xl font-bold">{props.event?.title}</div>
           <div className="m-2 text-md">
 
             <a
