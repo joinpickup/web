@@ -6,7 +6,7 @@ import EventCard from "../../../components/events/card";
 import { EventPost } from "../../../model/event";
 
 export async function getServerSideProps() {
-  let events = await getAllPosts("/src/content/events/");
+  let events = await getAllPosts("/content/events/");
 
   return {
     props: {

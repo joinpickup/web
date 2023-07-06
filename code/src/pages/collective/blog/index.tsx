@@ -4,7 +4,7 @@ import { Navbar } from "../../../components/navbar";
 import { getAllPosts } from "../../../lib/md";
 
 export async function getServerSideProps() {
-  let posts = await getAllPosts("/src/content/posts");
+  let posts = await getAllPosts("/content/posts");
 
   return {
     props: {
