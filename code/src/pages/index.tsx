@@ -40,11 +40,11 @@ function MainContent() {
         className="m-4 md:mx-20 p-8 rounded-xl bg-orange-200 text-[#333333] shadow-lg flex md:flex-row flex-col md:space-x-2 space-y-2 items-center"
       >
         <div className="order-2 md:order-1 flex flex-col space-y-2">
-          <div className="text-4xl md:text-5xl">A company controlled by its customers</div>
+          <div className="text-4xl md:text-5xl">Tools designed for communities</div>
           <div className="text-base md:text-lg">
-            The Pickup Collective is a company designed to put people over
-            profit. Like a co-op Pickup is completely owned by the people who
-            buy into the program.
+            At Pickup LLC we are dedicated to supporting local communities. 
+            Whether through building software, creating resources or sponsoring local events, 
+            we hope to provide opportunitites for people to make lasting meaningful connections.
           </div>
         </div>
         <div className="order-1 md:order-2">
