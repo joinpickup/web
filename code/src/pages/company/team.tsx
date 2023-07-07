@@ -49,13 +49,13 @@ function MainContent() {
           <TeamMemberCard
             name="Stefanie"
             email="solivares@joinpickup.com"
-            title="Co VP of Product/Media"
+            title="VP of Product"
             image="/img/team/stef.png"
           />
           <TeamMemberCard
             name="Jason"
             email="jolivares@joinpickup.com"
-            title="Co VP of Product/Media"
+            title="VP of Marketing"
             image="/img/team/jason.png"
           />
         </div>

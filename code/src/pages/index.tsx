@@ -37,7 +37,7 @@ function MainContent() {
     <main className="w-full h-full flex flex-col">
       {/* <div className="h-20"></div> */}
       <motion.div
-        className="m-4 md:mx-20 p-8 rounded-xl bg-orange-200 text-[#333333] shadow-lg flex md:flex-row flex-col md:space-x-2 space-y-2 items-center"
+        className="m-4 md:mx-20 p-8 rounded-xl bg-orange-200 text-[#333333] shadow-lg flex md:flex-row flex-col md:space-x-2 space-y-2 items-start"
       >
         <div className="order-2 md:order-1 flex flex-col space-y-2">
           <div className="text-4xl md:text-5xl">Tools designed for communities</div>
@@ -50,7 +50,26 @@ function MainContent() {
         <div className="order-1 md:order-2">
           <img src="/img/tree.svg"></img>
         </div>
+          <motion.a 
+            whileTap={{ scale: 0.9 }}
+            whileHover={{scale: 1.2}}
+              className="
+              order-3
+              p-4
+              justify-center
+              shadow-lg
+              flex 
+              cursor-pointer 
+              items-center 
+              text-md text-gray-800 rounded-full bg-orange-400
+              "
+              href="/collective/events"
+            >
+              <div>Upcoming Events...</div>
+          </motion.a>
       </motion.div>
     </main>
+
+
   );
 }
