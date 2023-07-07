@@ -6,7 +6,7 @@ import { getAllEvents } from '../../lib/md';
 import { EventPost } from '../../model/event';
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
-    const events: EventPost[] = getAllEvents('/content/events')
+    // const events: EventPost[] = getAllEvents('/content/events')
 
     const jsonDirectory = path.join(process.cwd(), '/content/events');
     //Read the json data file data.json
@@ -20,5 +20,5 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     //     return res.status(200).json(event[0])
     // }
   
-    res.status(200).json(events)
+    // res.status(200).json(events)
   }
