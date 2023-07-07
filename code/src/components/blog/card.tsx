@@ -1,6 +1,7 @@
 import { useRouter } from "next/router";
 import { BlogPost } from "../../model/blog";
 import { motion } from "framer-motion";
+import { useEffect } from "react";
 
 interface Props {
   post: BlogPost;
@@ -24,7 +25,7 @@ const BlogCard: React.FC<Props> = (props) => {
               </p>
               <img className="h-1" src="/svg/dot-divider.svg" />
               <p className="text-sm font-normal">
-                {props.post.publishedDate.toString()}
+                {props.post.publishedDate?.toString()}
               </p>
             </div>
             <h5 className="mb-2 text-2xl font-bold tracking-tight">

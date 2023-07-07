@@ -6,11 +6,15 @@ import useSWR, { Fetcher } from 'swr';
 import { Navbar } from "../../../../components/navbar";
 import { EventPost } from "../../../../model/event";
 import { motion } from "framer-motion";
+import moment from 'moment-timezone';
+
 
 const fetcher: Fetcher<EventPost> = (url: string) => fetch(url).then((res) => res.json());
 
 export default function EventPage() {
   const router = useRouter();
+
+  var options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
   const { data: event, error } = useSWR(`/api/events?slug=${router.query.slug}`, fetcher);
 
   return (
@@ -65,7 +69,7 @@ export default function EventPage() {
             <div className="flex text-3xl font-bold">{event?.title}</div>
             <div className="flex text-md">Description: {event?.description}</div>
             <address className="flex text-md">Address: {event?.address}</address>
-            <div className="flex text-md">Date: {event?.eventDate.toString()}</div>
+            <div className="flex text-md">Date: {moment(event?.eventDate).format('MMMM Do YYYY, h:mm:ss a')}</div>
             <img src={event?.image} className="rounded-lg bg-cover object-cover object-top w-full"></img>
           </div>
           <div className="flex flex-col w-full space-y-2 markdown">

@@ -5,7 +5,7 @@ import { EventPost } from "../../../model/event";
 
 const fetcher: Fetcher<EventPost[]> = (url: string) => fetch(url).then((res) => res.json());
 
-export default function Blog() {
+export default function Events() {
   const { data: events, error } = useSWR('/api/events', fetcher);
 
   return (

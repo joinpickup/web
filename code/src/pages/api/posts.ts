@@ -3,7 +3,7 @@ import { getAllPosts } from '../../lib/md';
 import { BlogPost } from '../../model/blog';
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
-    const posts: BlogPost[] = getAllPosts('/content/posts')
+    const posts: BlogPost[] = await getAllPosts()
 
     if (req.query.slug) {
         // we should only have one here

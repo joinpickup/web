@@ -1,6 +1,6 @@
 export interface EventPost {
     title: string;
-    eventDate: Date;
+    eventDate: string;
     slug: string;
     description: string;
     image: string;

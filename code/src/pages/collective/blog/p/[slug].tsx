@@ -5,33 +5,14 @@ import { Navbar } from "../../../../components/navbar";
 import { BlogPost } from "../../../../model/blog";
 import { getAllPosts } from "../../../../lib/md";
 import ReactMarkdown from "react-markdown";
+import useSWR, { Fetcher } from 'swr';
 import remarkGfm from "remark-gfm";
 
-export async function getServerSideProps(context: any) {
-  let posts = await getAllPosts("/src/content/posts/");
-  let post = posts.find((post) => post.slug == context.params.slug) ?? null;
+const fetcher: Fetcher<BlogPost> = (url: string) => fetch(url).then((res) => res.json());
 
-  return {
-    props: {
-      post,
-    },
-  };
-}
-
-interface Props {
-  post: BlogPost | null;
-  content: any;
-}
-
-const BlogPage: React.FC<Props> = (props) => {
+export default function BlogPage() {
   const router = useRouter();
-
-  useEffect(() => {
-    if (!props.post) {
-      // todo: handle redirect
-      router.push("/collective/blog");
-    }
-  }, []);
+  const { data: post, error } = useSWR(`/api/posts?slug=${router.query.slug}`, fetcher);
 
   return (
     <>
@@ -59,11 +40,11 @@ const BlogPage: React.FC<Props> = (props) => {
             </a>
           </div>
           <div className="mb-2 flex flex-col space-y-2">
-            <div className="flex text-6xl font-bold">{props.post?.title}</div>
+            <div className="flex text-6xl font-bold">{post?.title}</div>
             <div className="flex items-center space-x-2 text-xl">
-              <div className="text-md">{props.post?.author}</div>
+              <div className="text-md">{post?.author}</div>
               <div className="text-sm text-gray-400">
-                {props.post?.publishedDate.toString()}
+                {post?.publishedDate.toString()}
               </div>
             </div>
           </div>
@@ -71,7 +52,7 @@ const BlogPage: React.FC<Props> = (props) => {
             <ReactMarkdown
               remarkPlugins={[remarkGfm]}
             >
-              {props.post?.content as string}
+              {post?.content as string}
             </ReactMarkdown>
           </div>
         </div>
@@ -79,5 +60,3 @@ const BlogPage: React.FC<Props> = (props) => {
     </>
   );
 };
-
-export default BlogPage;
