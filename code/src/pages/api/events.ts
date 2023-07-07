@@ -8,11 +8,11 @@ import { EventPost } from '../../model/event';
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
     const events: EventPost[] = getAllEvents('/content/events')
 
-    if (req.query.slug) {
-        // we should only have one here
-        const event = events.filter(event => event.slug === req.query.slug);
-        return res.status(200).json(event[0])
-    }
+    // if (req.query.slug) {
+    //     // we should only have one here
+    //     const event = events.filter(event => event.slug === req.query.slug);
+    //     return res.status(200).json(event[0])
+    // }
   
     res.status(200).json(events)
   }
