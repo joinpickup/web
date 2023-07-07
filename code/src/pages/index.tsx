@@ -32,18 +32,18 @@ function MainContent() {
     <main className="w-full h-full flex flex-col">
       {/* <div className="h-20"></div> */}
       <motion.div
-        className="m-4 md:mx-20 p-8 rounded-xl bg-orange-200 text-[#333333] shadow-lg flex md:flex-row flex-col md:space-x-2 space-y-2 items-start"
+        className="m-4 md:mx-20 p-8 rounded-xl bg-orange-200 text-[#333333] shadow-lg space-y-2 flex flex-col items-start"
       >
-        <div className="order-2 md:order-1 flex flex-col space-y-2">
-          <div className="text-4xl md:text-5xl">Tools designed for communities</div>
-          <div className="text-base md:text-lg">
-            At Pickup LLC we are dedicated to supporting local communities. 
-            Whether through building software, creating resources or sponsoring local events, 
-            we hope to provide opportunitites for people to make lasting meaningful connections.
+        <div className="flex md:flex-row flex-col">
+          <div className="order-2 md:order-1 flex flex-col space-y-2">
+            <div className="text-4xl md:text-5xl">Community Put First</div>
+            <div className="text-base md:text-lg">
+              At Pickup LLC we are dedicated to supporting local communities. 
+              Whether through building software, creating resources or sponsoring local events, 
+              we hope to provide opportunitites for people to make lasting meaningful connections.
+            </div>
           </div>
-        </div>
-        <div className="order-1 md:order-2">
-          <img src="/img/tree.svg"></img>
+
         </div>
           <motion.a 
             whileTap={{ scale: 0.9 }}

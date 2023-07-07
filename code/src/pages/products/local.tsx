@@ -35,12 +35,10 @@ function MainContent() {
           <div className="text-4xl md:text-5xl">
             <span className="underline decoration-gray-700 decoration-2 underline-offset-2">Local</span> is your digital bulletin board</div>
           <div className="text-base md:text-lg">
-            Get connected to your local community by finding what{"'"}s happening nearby.
+            Currently in Beta, Local is an app designed to connect like minded people over things that they are passionate about.
+
           </div>
           <MailchimpEmail />
-        </div>
-        <div className="order-1 md:order-2">
-          <img src="/img/community.svg"></img>
         </div>
       </div>
     </main>
