@@ -1,14 +1,15 @@
-import path from 'path';
-import { promises as fs } from 'fs';
-import { NextRequest, NextResponse } from 'next/server';
-import { NextApiResponse } from 'next';
+import { NextApiRequest, NextApiResponse } from 'next';
 import { getAllPosts } from '../../lib/md';
+import { BlogPost } from '../../model/blog';
 
-export default async function handler(req: NextRequest, res: NextResponse) {
-  //Find the absolute path of the json directory
-  const posts = getAllPosts('/content/posts')
-  //Read the json data file data.json
-  //Return the content of the data file in json format
+export default async function handler(req: NextApiRequest, res: NextApiResponse) {
+    const posts: BlogPost[] = getAllPosts('/content/posts')
 
-  NextResponse.json(posts)
+    if (req.query.slug) {
+        // we should only have one here
+        const post = posts.filter(post => post.slug === req.query.slug);
+        return res.status(200).json(post[0])
+    }
+  
+    res.status(200).json(posts)
 }

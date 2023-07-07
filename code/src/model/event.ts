@@ -6,5 +6,6 @@ export interface EventPost {
     image: string;
     content: string;
     rsvpLink: string;
+    address: string;
   }
   

@@ -5,6 +5,7 @@ import remarkGfm from "remark-gfm";
 import useSWR, { Fetcher } from 'swr';
 import { Navbar } from "../../../../components/navbar";
 import { EventPost } from "../../../../model/event";
+import { motion } from "framer-motion";
 
 const fetcher: Fetcher<EventPost> = (url: string) => fetch(url).then((res) => res.json());
 
@@ -15,7 +16,27 @@ export default function EventPage() {
   return (
     <>
       <Navbar />
-      <main className="m-4 flex flex-col items-center space-y-4 p-4">
+      <main className="flex flex-col items-center space-y-4 mx-4 px-4">
+          <motion.a 
+            whileTap={{ scale: 0.9 }}
+            whileHover={{scale: 1.2}}
+              className="
+              fixed
+              p-4 text-md 
+              bottom-4
+              right-4
+              justify-center
+              shadow-lg
+              flex 
+              cursor-pointer 
+              items-center 
+              text-xl text-gray-800 rounded-full bg-orange-400
+              "
+              href={event?.rsvpLink}
+              target="_blank"
+            >
+              <div>RSVP</div>
+          </motion.a>
         <div className="flex flex-col space-y-4 font-medium md:w-128">
           <div className="w-fit">
             <a
@@ -41,18 +62,10 @@ export default function EventPage() {
         event == undefined ? <></> : 
         <>
           <div className="mb-2 flex flex-col space-y-2">
-            <div className="flex text-4xl font-bold">{event?.title}</div>
-          <div className="m-2 text-md">
-
-            <a
-              className="flex cursor-pointer items-center space-x-2 text-orange-400 hover:underline text-xl"
-              href={event?.rsvpLink}
-              target="_blank"
-            >
-
-              <div>RSVP</div>
-            </a>
-          </div>
+            <div className="flex text-3xl font-bold">{event?.title}</div>
+            <div className="flex text-md">Description: {event?.description}</div>
+            <address className="flex text-md">Address: {event?.address}</address>
+            <div className="flex text-md">Date: {event?.eventDate.toString()}</div>
             <img src={event?.image} className="rounded-lg bg-cover object-cover object-top w-full"></img>
           </div>
           <div className="flex flex-col w-full space-y-2 markdown">
