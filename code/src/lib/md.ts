@@ -38,6 +38,7 @@ export function getAllPosts(folder:string) {
 
 export function getAllEvents(folder:string) {
     const postsPath = getPath(folder)
+    console.log(postsPath)
 
     return fs
         .readdirSync(postsPath)
