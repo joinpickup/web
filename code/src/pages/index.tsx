@@ -6,12 +6,7 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>The Pickup Collective</title>
-        <script
-          defer
-          data-domain="joinpickup.com"
-          src="https://analytics.joinpickup.com/js/script.js"
-        ></script>
+        <title>Pickup, LLC</title>
         <meta property="og:title" content="Pickup, LLC" />
         <meta property="og:type" content="website" />
         <meta
@@ -19,7 +14,7 @@ export default function Home() {
           content="https://joinpickup.com/pickup-logo-v2.png"
         />
         <meta property="og:url" content="https://joinpickup.com" />
-        <meta name="description" content="A new kind of company." />
+        <meta name="description" content="A better community" />
         <link rel="icon" href="/favicon.ico" />
         <link
           href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;500;700&display=swap"
@@ -65,7 +60,7 @@ function MainContent() {
               "
               href="/collective/events"
             >
-              <div>Upcoming Events...</div>
+              <div>Upcoming Events</div>
           </motion.a>
       </motion.div>
     </main>
