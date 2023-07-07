@@ -10,12 +10,6 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
     if (req.query.slug) {
         // we should only have one here
-        const jsonDirectory = path.join(process.cwd(), 'content');
-        //Read the json data file data.json
-        const fileContents = await fs.readFile(jsonDirectory + '/events/paint-night-with-a-twist.md', 'utf8');
-        //Return the content of the data file in json format
-        return res.status(200).json(fileContents);
-
         const event = events.filter(event => event.slug === req.query.slug);
         return res.status(200).json(event[0])
     }
