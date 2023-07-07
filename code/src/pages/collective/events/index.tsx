@@ -1,25 +1,13 @@
-import BlogCard from "../../../components/blog/card";
-import { BlogPost } from "../../../model/blog";
-import { Navbar } from "../../../components/navbar";
-import { getAllPosts } from "../../../lib/md";
+import useSWR, { Fetcher } from 'swr';
 import EventCard from "../../../components/events/card";
+import { Navbar } from "../../../components/navbar";
 import { EventPost } from "../../../model/event";
 
-export async function getServerSideProps() {
-  let events = await getAllPosts("/content/events/");
+const fetcher: Fetcher<EventPost[]> = (url: string) => fetch(url).then((res) => res.json());
 
-  return {
-    props: {
-      events,
-    },
-  };
-}
+export default function Blog() {
+  const { data: events, error } = useSWR('/api/events', fetcher);
 
-interface Props {
-  events: EventPost[];
-}
-
-const Blog: React.FC<Props> = (props) => {
   return (
     <>
       <Navbar />
@@ -29,7 +17,7 @@ const Blog: React.FC<Props> = (props) => {
         </div>
         <div>
           <ul className="flex flex-col p-4 md:w-128 w-full space-y-4">
-            {props.events.map((event) => {
+            {events?.map((event) => {
               return <EventCard event={event} key={event.slug} />;
             })}
           </ul>
@@ -39,4 +27,3 @@ const Blog: React.FC<Props> = (props) => {
   );
 };
 
-export default Blog;

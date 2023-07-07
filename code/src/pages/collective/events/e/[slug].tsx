@@ -1,38 +1,16 @@
 import { useRouter } from "next/router";
 import { useEffect } from "react";
-import Button from "../../../../../ACE/Button/Button";
-import { Navbar } from "../../../../components/navbar";
-import { BlogPost } from "../../../../model/blog";
-import { getAllPosts } from "../../../../lib/md";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
+import useSWR, { Fetcher } from 'swr';
+import { Navbar } from "../../../../components/navbar";
 import { EventPost } from "../../../../model/event";
 
-export async function getServerSideProps(context: any) {
-  let events = await getAllPosts("/src/content/events/");
-  let event = events.find((event) => event.slug == context.params.slug) ?? null;
+const fetcher: Fetcher<EventPost> = (url: string) => fetch(url).then((res) => res.json());
 
-  return {
-    props: {
-      event,
-    },
-  };
-}
-
-interface Props {
-  event: EventPost | null;
-  content: any;
-}
-
-const BlogPage: React.FC<Props> = (props) => {
+export default function EventPage() {
   const router = useRouter();
-
-  useEffect(() => {
-    if (!props.event) {
-      // todo: handle redirect
-      router.push("/collective/events");
-    }
-  }, []);
+  const { data: event, error } = useSWR(`/api/events?slug=${router.query.slug}`, fetcher);
 
   return (
     <>
@@ -59,32 +37,35 @@ const BlogPage: React.FC<Props> = (props) => {
               <div> All Events</div>
             </a>
           </div>
+      {
+        event == undefined ? <></> : 
+        <>
           <div className="mb-2 flex flex-col space-y-2">
-            <div className="flex text-4xl font-bold">{props.event?.title}</div>
+            <div className="flex text-4xl font-bold">{event?.title}</div>
           <div className="m-2 text-md">
 
             <a
               className="flex cursor-pointer items-center space-x-2 text-orange-400 hover:underline text-xl"
-              href={props.event?.rsvpLink}
+              href={event?.rsvpLink}
               target="_blank"
             >
 
               <div>RSVP</div>
             </a>
           </div>
-            <img src={props.event?.image} className="rounded-lg bg-cover object-cover object-top w-full"></img>
+            <img src={event?.image} className="rounded-lg bg-cover object-cover object-top w-full"></img>
           </div>
           <div className="flex flex-col w-full space-y-2 markdown">
             <ReactMarkdown
               remarkPlugins={[remarkGfm]}
             >
-              {props.event?.content as string}
+              {event?.content as string}
             </ReactMarkdown>
           </div>
+        </>
+    }
         </div>
       </main>
     </>
   );
 };
-
-export default BlogPage;
