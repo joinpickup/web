@@ -2,7 +2,6 @@
 import "../styles/globals.css";
 import type { AppType } from "next/app";
 import Router from "next/router";
-import { trpc } from "../utils/trpc";
 import NProgress from "nprogress"; //nprogress module
 import "nprogress/nprogress.css"; //styles of nprogress
 
@@ -15,4 +14,4 @@ const MyApp: AppType = ({ Component, pageProps }) => {
   return <Component {...pageProps} />;
 };
 
-export default trpc.withTRPC(MyApp);
+export default MyApp;
