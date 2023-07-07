@@ -3,6 +3,7 @@ import path from "path";
 import matter from "gray-matter";
 import { BlogPost } from "../model/blog";
 import { EventPost } from "../model/event";
+import { promisify } from "util";
 
 export function getPath(folder:string) {
     return path.join(process.cwd(), `/${folder}`);
@@ -36,25 +37,29 @@ export function getAllPosts(folder:string) {
         });
 };
 
-export function getAllEvents(folder:string) {
-    const eventsPath = getPath(folder)
+export async function getAllEvents() {
+    const eventsDir = path.join(process.cwd(), '/content/events');
 
-    return fs
-        .readdirSync(eventsPath)
-        .filter((path) => {
-            return /\.md$/.test(path)
-        })
-        .map((fileName) => {
-            const source = getFileContent(fileName, folder);
-            const slug = fileName.replace(/\.md$/, "");
-            const { data, content } = matter(source);
-            return {
-                ...data,
-                slug: slug,
-                content: content,
-            } as EventPost
-        })
-        .sort((a, b) => {
-            return new Date(a.eventDate).getTime() - new Date(b.eventDate).getTime()
-        });
+    //Read the json data file data.json
+    const fileNames = await promisify(fs.readdir)(eventsDir, "utf-8");
+    const mdFileNames = fileNames.filter((path) => {
+        return /\.md$/.test(path)
+    })
+
+    const events: EventPost[] = []
+    for (let mdFileName of mdFileNames) {
+        const filePath = path.join(eventsDir, mdFileName)
+        const source = await promisify(fs.readFile)(filePath, 'utf-8')
+        const slug = mdFileName.replace(/\.md$/, "");
+        const { data, content } = matter(source);
+        const event = {
+            ...data,
+            slug: slug,
+            content: content,
+        } as EventPost
+
+        events.push(event)
+    }
+
+    return events;
 };
