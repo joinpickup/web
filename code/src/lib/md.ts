@@ -37,11 +37,10 @@ export function getAllPosts(folder:string) {
 };
 
 export function getAllEvents(folder:string) {
-    const postsPath = getPath(folder)
-    console.log(postsPath)
+    const eventsPath = getPath(folder)
 
     return fs
-        .readdirSync(postsPath)
+        .readdirSync(eventsPath)
         .filter((path) => {
             return /\.md$/.test(path)
         })
