@@ -17,19 +17,21 @@ const { title } = Astro.props;
     />
   </head>
 
-  <body>
-    <Header />
-    <article class="fixed top-12 m-4">
-      <slot />
-    </article>
-    <Footer />
+  <body class="h-screen">
+    <div class="flex flex-col h-full">
+      <Header />
+      <article class="mx-8 flex-1">
+        <slot />
+      </article>
+      <Footer />
+    </div>
   </body>
-</html>
 
-<style>
-  * {
-    background-color: #f7e8de;
-    font-family: "Nunito";
-    font-weight: 700;
-  }
-</style>
+  <style>
+    * {
+      background-color: #f7e8de;
+      font-family: "Nunito";
+      font-weight: 700;
+    }
+  </style>
+</html>

@@ -3,18 +3,29 @@ import { getCollection } from "astro:content";
 import Layout from "../../layouts/Layout.astro";
 
 const allPosts = await getCollection("blog");
+const sortedPosts = allPosts.sort((a, b) => {
+  return b.data.publishedDate.valueOf() - a.data.publishedDate.valueOf();
+});
+console.log(sortedPosts.map((p) => p.slug));
 ---
 
-<main>
-  <Layout>
-    <div>this is the test</div>
-  </Layout>
-</main>
-
-<style>
-  main {
-    margin: auto;
-    padding: 1.5rem;
-    max-width: 60ch;
-  }
-</style>
+<Layout>
+  <div class="h-full w-full flex flex-col space-y-2">
+    <div class="text-2xl">Blog</div>
+    <div class="h-0.5 bg-gray-800 rounded-full"></div>
+    <ul class="flex flex-col space-y-2">
+      {
+        sortedPosts.map((p) => {
+          return (
+            <a class="" href={`/blog/${p.slug}`}>
+              <li class="p-4 border-2 border-black rounded-lg cursor-pointer">
+                <div class="text-xl">{p.data.title}</div>
+                <div class="text-sm">{p.data.description}</div>
+              </li>
+            </a>
+          );
+        })
+      }
+    </ul>
+  </div>
+</Layout>

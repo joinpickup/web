@@ -2,10 +2,22 @@
 import Layout from "../layouts/Layout.astro";
 ---
 
-<main>
-  <Layout>
-    <div>this is a test</div>
-  </Layout>
-</main>
+<Layout>
+  <ul>
+    <li>
+      <a href="/local">/Local</a>
+    </li>
+    <li>
+      <a href="/blog">/Blog</a>
+    </li>
+    <li>
+      <a href="/events">/Events</a>
+    </li>
+  </ul>
+</Layout>
 
-<style></style>
+<style>
+  * {
+    @apply text-2xl;
+  }
+</style>
