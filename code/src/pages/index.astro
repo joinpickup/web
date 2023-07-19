@@ -1,20 +1,28 @@
 ---
+import Link from "../components/Link.astro";
 import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout>
-  <ul>
-    <li>
-      <a href="/blog">/Blog</a>
-    </li>
-    <li>
-      <a href="/events">/Events</a>
-    </li>
-  </ul>
-</Layout>
+  <div class="flex flex-col space-y-2">
+    <div class="flex flex-col">
+      <div class="text-3xl">Pickup LLC</div>
+      <div class="font-medium italic">Community at our core</div>
+    </div>
+    <div class="h-0.5 bg-gray-800 rounded-full"></div>
+    <ul class="flex flex-col space-y-2">
+      <li>
+        <Link title="/Products/Local" description="" link="/products/local" />
+        <Link title="/Mission" description="" link="/mission" />
+        <Link title="/Blog" description="" link="/blog" />
+        <Link title="/Events" description="" link="/events" />
+      </li>
+    </ul>
 
-<style>
-  * {
-    @apply text-2xl;
-  }
-</style>
+    <style>
+      * {
+        @apply text-xl;
+      }
+    </style>
+  </div>
+</Layout>

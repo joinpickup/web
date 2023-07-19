@@ -2,7 +2,7 @@
 import Footer from "../components/Footer.astro";
 import Header from "../components/Header.astro";
 
-const { title } = Astro.props;
+const { title, color = "#f7e8de" } = Astro.props;
 ---
 
 <html lang="en">
@@ -26,12 +26,24 @@ const { title } = Astro.props;
       <Footer />
     </div>
   </body>
-
-  <style>
-    * {
-      background-color: #f7e8de;
-      font-family: "Nunito";
-      font-weight: 700;
-    }
-  </style>
 </html>
+
+<style define:vars={{ color }} is:global>
+  * {
+    background-color: var(--color);
+    font-family: "Nunito";
+    font-weight: 700;
+  }
+
+  .grow {
+    transition: all 0.2s ease-in-out;
+  }
+
+  .grow:hover {
+    transform: scale(1.02);
+  }
+
+  .grow:active {
+    transform: scale(0.98);
+  }
+</style>
