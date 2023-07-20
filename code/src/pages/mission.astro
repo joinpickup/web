@@ -1,4 +1,5 @@
 ---
+import Section from "../components/Section.astro";
 import Layout from "../layouts/Layout.astro";
 ---
 
@@ -9,7 +10,44 @@ import Layout from "../layouts/Layout.astro";
       <div class="font-medium italic">Who are we and what are we about?</div>
     </div>
     <div class="h-0.5 bg-gray-800 rounded-full"></div>
-    <ul class="flex flex-col space-y-2"></ul>
+    <ul class="flex flex-col space-y-2">
+      <Section title="What are we trying to do?">
+        <div class="text-lg font-medium">
+          We want to build tools to provide structure, community and the purpose
+          that is found in opportunities like College and Church. Not everyone
+          has access to those resources, so we want to provide the opportunities
+          for those local communities to thrive.
+        </div>
+      </Section>
+      <Section title="Why are we doing this?">
+        <div class="text-lg font-medium">
+          We believe that everyone deserves to feel like they belong. Belonging
+          comes from community. Intentional, lasting community is becoming
+          harder and harder to find. Our goal is to make that process easier for
+          everyone. If we can help even two people connect who wouldn't have
+          connected without us, we acomplished our mission.
+        </div>
+      </Section>
+      <Section title="How Do We Make Money">
+        <div class="text-lg font-medium">
+          Currently? We don't. We have plans to release some software products
+          that we will offer a fremium service for, but until then we are funded
+          through donations.
+        </div>
+      </Section>
+      <Section title="Core Values">
+        <div>
+          <ul>
+            <li class="text-lg font-medium">- People Over Profit</li>
+            <li class="text-lg font-medium">- Lifelong Learning</li>
+            <li class="text-lg font-medium">- Empowering Individuals</li>
+          </ul>
+        </div>
+      </Section>
+      <Section title="The Team">
+        <div></div>
+      </Section>
+    </ul>
 
     <style>
       * {

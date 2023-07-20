@@ -1,4 +1,5 @@
 ---
+import Section from "../../components/Section.astro";
 import Layout from "../../layouts/Layout.astro";
 ---
 
@@ -9,7 +10,40 @@ import Layout from "../../layouts/Layout.astro";
       <div class="font-medium italic">A digital bullitin board</div>
     </div>
     <div class="h-0.5 bg-gray-800 rounded-full"></div>
-    <div></div>
+    <ul class="flex flex-col space-y-2">
+      <Section title="The Problem">
+        <div class="text-lg font-medium">
+          In a digital age, people are feeling less connected to their
+          communities.
+        </div>
+      </Section>
+      <Section title="The Solution">
+        <div class="text-lg font-medium">
+          Design an app to connect people with other nearby people over shared
+          passions. No commitment, no pressure, no events, just people
+          connecting with people.
+        </div>
+      </Section>
+      <Section title="How It Works">
+        <div class="flex flex-col space-y-2 text-lg font-medium">
+          Filter your search for a specific interest. Once you find a post that
+          you like, message that person. That message goes away unless they
+          decide to respond. Once they respond you can message about getting
+          together.
+        </div>
+      </Section>
+      <Section title="Features">
+        <div>
+          <ul>
+            <li class="text-lg font-medium">- Posts</li>
+            <li class="text-lg font-medium">- Saved Searches</li>
+            <li class="text-lg font-medium">- Custom Filtering</li>
+            <li class="text-lg font-medium">- Intentional Messaging</li>
+            <li class="text-lg font-medium">- Anonymous Until You Connect</li>
+          </ul>
+        </div>
+      </Section>
+    </ul>
 
     <style>
       * {
