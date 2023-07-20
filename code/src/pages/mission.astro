@@ -1,0 +1,68 @@
+---
+import Section from "../components/Section.astro";
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout>
+  <div class="flex flex-col space-y-2">
+    <div class="flex flex-col">
+      <div class="text-3xl font-bold">Mission</div>
+      <div class="italic text-xl">Who are we and what are we about?</div>
+    </div>
+    <div class="h-0.5 bg-gray-800 rounded-full"></div>
+    <ul class="flex flex-col space-y-2">
+      <Section title="Who are we?">
+        <div class="text-lg font-medium">
+          We are a small team of three based out of New Haven CT. We are focused
+          on helping foster local communities.
+        </div>
+      </Section>
+      <Section title="What are we trying to do?">
+        <div class="text-lg font-medium">
+          We want to build tools to provide the structure, community and purpose
+          that is typically found in college, church or camp. Not everyone has
+          access to those opportunities, so we want to provide the resources and
+          events to help local communities thrive.
+        </div>
+      </Section>
+      <Section title="Why are we doing this?">
+        <div class="text-lg flex flex-col space-y-2">
+          <ul>
+            <li>- Everyone deserves to feel like they belong.</li>
+            <li>- Community is becoming harder to find.</li>
+            <li>- Too many companies take advantage of people for profit</li>
+          </ul>
+
+          <div class="font-medium">
+            We want to prove that a company can put people first. Our main
+            metric for success is lasting connections. If we can help even two
+            people connect who wouldn't have connected without us, we
+            acomplished our mission.
+          </div>
+        </div>
+      </Section>
+      <Section title="How Do We Make Money">
+        <div class="text-lg font-medium">
+          Currently? We don't. We have plans to release some software products
+          that we will offer a fremium service for, but until then we are funded
+          through donations.
+        </div>
+      </Section>
+      <Section title="Core Values">
+        <div class="text-lg">
+          <ul>
+            <li>- People Over Profit</li>
+            <li>- Lifelong Learning</li>
+            <li>- Empowering Individuals</li>
+          </ul>
+        </div>
+      </Section>
+    </ul>
+
+    <style>
+      * {
+        @apply font-medium;
+      }
+    </style>
+  </div>
+</Layout>

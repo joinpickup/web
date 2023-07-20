@@ -1,0 +1,69 @@
+---
+import Section from "../../components/Section.astro";
+import Layout from "../../layouts/Layout.astro";
+---
+
+<Layout>
+  <div class="flex flex-col space-y-2">
+    <div class="flex flex-col">
+      <div class="text-3xl font-bold">Local</div>
+      <div class="font-medium italic text-xl">A digital bullitin board</div>
+    </div>
+    <div class="h-0.5 bg-gray-800 rounded-full"></div>
+    <ul class="flex flex-col space-y-2">
+      <Section title="The Problem">
+        <div class="text-lg font-medium">
+          In a digital age, people feel less connected to their communities.
+        </div>
+      </Section>
+      <Section title="The Solution">
+        <div class="text-lg font-medium">
+          Design an app to help people connect with others nearby over shared
+          passions. No commitment, no pressure, no events, just people
+          connecting with people.
+        </div>
+      </Section>
+      <Section title="How It Works">
+        <div class="flex flex-col space-y-2 text-lg font-medium">
+          <div>
+            Filter your search for a specific interest. Once you find a post
+            that you like, message that person. That message disappears until
+            they decide to respond. Once they respond you can message about
+            getting together.
+          </div>
+
+          <div>
+            You can also save a search so that if someone nearby creats a post
+            that matches your filters you will get notified even when you aren't
+            in the app.
+          </div>
+
+          <div>
+            If you decide you want to post, tag it with an interest and others
+            can find you. Eventually you'll get messages, accept or deny those
+            messages and get together.
+          </div>
+        </div>
+      </Section>
+      <Section title="Features">
+        <div>
+          <ul>
+            <li class="text-lg font-medium">- Posts</li>
+            <li class="text-lg font-medium">- Saved Searches</li>
+            <li class="text-lg font-medium">- Custom Filtering</li>
+            <li class="text-lg font-medium">- Intentional Messaging</li>
+            <li class="text-lg font-medium">- Anonymous Until You Connect</li>
+          </ul>
+        </div>
+      </Section>
+    </ul>
+
+    <style>
+      * {
+        @apply font-medium;
+      }
+    </style>
+  </div>
+</Layout>
+
+<style></style>

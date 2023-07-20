@@ -1,0 +1,49 @@
+---
+import Footer from "../components/Footer.astro";
+import Header from "../components/Header.astro";
+
+const { title, color = "#f7e8de" } = Astro.props;
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body class="h-screen">
+    <div class="flex flex-col h-full">
+      <Header />
+      <article class="mx-8 flex-1">
+        <slot />
+      </article>
+      <Footer />
+    </div>
+  </body>
+</html>
+
+<style define:vars={{ color }} is:global>
+  * {
+    background-color: var(--color);
+    font-family: "Nunito";
+    font-weight: 700;
+  }
+
+  .grow {
+    transition: all 0.2s ease-in-out;
+  }
+
+  .grow:hover {
+    transform: scale(1.02);
+  }
+
+  .grow:active {
+    transform: scale(0.98);
+  }
+</style>
