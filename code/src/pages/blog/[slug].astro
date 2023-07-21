@@ -18,8 +18,8 @@ const { entry } = Astro.props;
 const { Content } = await entry.render();
 ---
 
-<Layout>
-  <div class="space-y-2">
+<Layout footer={false}>
+  <div class="space-y-2 max-w-prose pb-10">
     <a
       href="/blog"
       class="flex underline space-x-1 items-center hover:text-orange-500 grow"
@@ -40,8 +40,8 @@ const { Content } = await entry.render();
       <div>All Posts</div>
     </a>
     <div class="h-0.5 bg-gray-800 rounded-full"></div>
-    <div class="flex justify-center w-full">
-      <article class="w-96">
+    <div class="flex w-full">
+      <article>
         <Content />
       </article>
     </div>
