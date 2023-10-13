@@ -18,6 +18,7 @@ const eventCollection = defineCollection({
   schema: z.object({
     title: z.string(),
     image: z.string(),
+    urlSlug: z.string(),
   }),
 });
 

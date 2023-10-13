@@ -6,7 +6,7 @@ export async function getStaticPaths() {
   const allEvents = await getCollection("events");
 
   return allEvents.map((entry) => ({
-    params: { slug: entry.slug },
+    params: { slug: entry.data.urlSlug, },
     props: { entry },
   }));
 }

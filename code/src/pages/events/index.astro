@@ -16,7 +16,7 @@ const allEvents = await getCollection("events");
       {
         allEvents.map((event) => {
           return (
-            <a class="grow" href={`/events/${event.slug}`}>
+            <a class="grow" href={`/events/${event.data.urlSlug}`}>
               <li class="p-4 border-2 border-black rounded-lg cursor-pointer">
                 <div class="text-xl">{event.data.title}</div>
                 <div class="text-sm">{event.data.description}</div>
