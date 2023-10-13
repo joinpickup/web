@@ -1,0 +1,6 @@
+  * {
+    background-color: var();
+    color: var(--textColor);
+    font-family: "Nunito";
+    font-weight: 700;
+  }

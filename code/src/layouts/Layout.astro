@@ -2,7 +2,11 @@
 import Footer from "../components/Footer.astro";
 import Header from "../components/Header.astro";
 
-const { footer = true, color = "#f7e8de" } = Astro.props;
+const {
+  footer = true,
+  backgroundColor = "#f7e8de",
+  textColor = "#000000",
+} = Astro.props;
 ---
 
 <html lang="en">
@@ -28,9 +32,10 @@ const { footer = true, color = "#f7e8de" } = Astro.props;
   </body>
 </html>
 
-<style define:vars={{ color }} is:global>
+<style define:vars={{ backgroundColor, textColor }} is:global>
   * {
-    background-color: var(--color);
+    background-color: var(--backgroundColor);
+    color: var(--textColor);
     font-family: "Nunito";
     font-weight: 700;
   }

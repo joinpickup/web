@@ -19,7 +19,7 @@ const event: CollectionEntry<"events"> = entry;
   <div class="space-y-2">
     <a
       href="/events"
-      class="flex underline space-x-1 items-center hover:text-orange-500 grow"
+      class="underline space-x-1 items-center hover:text-orange-500 flex grow"
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -38,6 +38,28 @@ const event: CollectionEntry<"events"> = entry;
     </a>
 
     <div class="h-0.5 bg-gray-800 rounded-full"></div>
+    <div class="flex flex-col space-y-2">
+    {
+      event.data.rsvpLink ?
+        <a href={event.data.rsvpLink}>
+          <button
+            class="text-2xl rounded-lg p-2 border-2 border-black w-full shadow-lg grow"
+          >
+            RSVP
+          </button>
+        </a> : <></>
+    }
+    {
+      event.data.videoLink ?
+        <a href={event.data.videoLink}>
+          <button
+            class="text-2xl rounded-lg p-2 border-2 border-black w-full shadow-lg grow"
+          >
+            Video
+          </button>
+        </a> : <></>
+    }
+    </div>
     <img src={event.data.image} class="cover rounded-lg" />
   </div>
 </Layout>
