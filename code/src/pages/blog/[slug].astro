@@ -4,6 +4,7 @@ import Layout from "../../layouts/Layout.astro";
 
 export async function getStaticPaths() {
   const allPosts = await getCollection("blog");
+
   const blogEntries = allPosts.sort((a, b) => {
     return b.data.publishedDate.valueOf() - a.data.publishedDate.valueOf();
   });

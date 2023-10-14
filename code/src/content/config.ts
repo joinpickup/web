@@ -22,8 +22,15 @@ const eventCollection = defineCollection({
   }),
 });
 
+const huntCollection = defineCollection({
+  type: 'content', // v2.5.0 and later
+  schema: z.object({
+  }),
+});
+
 // 3. Export a single `collections` object to register your collection(s)
 export const collections = {
   'blog': blogCollection,
   'event': eventCollection,
+  'hunt': huntCollection,
 };
