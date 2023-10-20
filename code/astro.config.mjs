@@ -6,5 +6,11 @@ import tailwind from "@astrojs/tailwind";
 export default defineConfig({
   output: 'static',
   adapter: vercelStatic(),
-  integrations: [tailwind()]
+  integrations: [tailwind()],
+  experimental: {
+    redirects: true,
+  },
+  redirects: {
+    '/events/hunt/rsvp': 'https://forms.gle/MpAs1eabZ1NCMz2k6'
+  }
 })

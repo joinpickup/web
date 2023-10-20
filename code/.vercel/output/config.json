@@ -2,6 +2,13 @@
 	"version": 3,
 	"routes": [
 		{
+			"src": "/\\/events\\/hunt\\/rsvp",
+			"headers": {
+				"Location": "/https:/forms.gle/MpAs1eabZ1NCMz2k6"
+			},
+			"status": 301
+		},
+		{
 			"handle": "filesystem"
 		}
 	]
