@@ -1,0 +1,29 @@
+---
+import { getCollection } from "astro:content";
+
+export async function getStaticPaths() {
+  const allHunts = await getCollection("hunt");
+
+  const allClues = allHunts.filter((hunt) => {
+    return hunt.id.includes("clue");
+  });
+
+  return allClues.map((entry) => ({
+    params: { slug: entry.slug },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+---
+
+<main class="m-4 flex flex-col space-y-4">
+  <div class="text-3xl">
+    {entry?.data.clue}
+  </div>
+  <div class="text-3xl">
+    {entry?.data.l_coord}
+    {entry?.data.r_coord}
+  </div>
+  <div class="text-3xl font-bold">-A. Drake</div>
+</main>

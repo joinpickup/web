@@ -1,5 +1,6 @@
 ---
-clue:
-slug: 7c0eeec8-99fd-4902-9159-c14740ee60fb
-passcode: test_code
+clue: "1700 E"
+slug: 8d2e3ba4
+l_coord: 19
+r_coord: 95
 ---
