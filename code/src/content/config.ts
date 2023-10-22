@@ -26,8 +26,6 @@ const huntCollection = defineCollection({
   type: 'content', // v2.5.0 and later
   schema: z.object({
     clue: z.string(),
-    r_coord: z.number(),
-    l_coord: z.number(),
   }),
 });
 

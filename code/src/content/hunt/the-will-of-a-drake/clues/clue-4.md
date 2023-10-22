@@ -1,6 +1,5 @@
 ---
-clue: "A legend, a map, behind such a view; that eight begets a key split in two. The faces, the names, the set of the sun; civil in arms, then two became one."
+clue: Dearly to you, I address; to where the next location rests.  Older than ivy, in high regard; find our elm citys finest.
 slug: 7c0eeec8
-l_coord: 32
-r_coord: 90
+number: 4
 ---

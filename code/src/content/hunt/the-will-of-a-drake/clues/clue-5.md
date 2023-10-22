@@ -1,6 +1,5 @@
 ---
-clue: "take what is learned from ink having set in secret the knowing of life after death"
-slug: 2b70fad3
-l_coord: 46
-r_coord: 60
+clue: Walk a path laced with rose, near some green and some silver, and look for a table submerged.  Your feet pressed on stones, top right will deliver, with the world according to birds.
+slug: 680f4c8e
+number: 5
 ---
