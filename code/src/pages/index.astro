@@ -3,38 +3,45 @@ import Link from "../components/Link.astro";
 import Layout from "../layouts/Layout.astro";
 ---
 
-<Layout>
-  <div class="flex flex-col space-y-2">
-    <div class="flex flex-col">
-      <div class="text-3xl">Pickup LLC</div>
-      <div class="font-medium italic">Community at our core</div>
-    </div>
-    <div class="h-0.5 bg-gray-800 rounded-full"></div>
-    <ul class="flex flex-col space-y-2">
-      <li>
-        <Link
-          title="/Mission"
-          description="Find out more information about us."
-          link="/mission"
-        />
-        <Link
-          title="/Products/Local"
-          description="Our flagship product. Your digital bullitin board."
-          link="/products/local"
-        />
-        <Link
-          title="/Events"
-          description="Events that we are hosting."
-          link="/events"
-        />
-        <Link title="/Blog" description="Our writing." link="/blog" />
-      </li>
-    </ul>
+<html>
+  <head>
+    <title>Pickup, LLC</title>
+  </head>
+  <Layout>
+    <div class="flex flex-col space-y-2">
+      <div class="flex flex-col">
+        <div class="text-3xl">Pickup, LLC</div>
+        <div class="font-medium italic">Community at our core</div>
+      </div>
+      <div class="h-0.5 bg-gray-800 rounded-full"></div>
+      <ul class="flex flex-col space-y-2">
+        <li>
+          <Link
+            title="/Mission"
+            description="Find out more information about us."
+            link="/mission"
+          />
+          <Link
+            title="/Products/Local"
+            description="Our flagship product. Your digital bullitin board."
+            link="/products/local"
+          />
+          <Link
+            title="/Events"
+            description="Events that we are hosting."
+            link="/events"
+          />
+          <Link title="/Blog" description="Our writing." link="/blog" />
+        </li>
+      </ul>
 
-    <style>
-      * {
-        @apply text-xl;
-      }
-    </style>
-  </div>
-</Layout>
+      <style>
+        * {
+          @apply text-xl;
+        }
+      </style>
+    </div>
+  </Layout>
+
+
+</html>
