@@ -3,7 +3,19 @@ import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout>
-  <main class="m-10 h-full w-full flex justify-center items-center text-2xl">
+  <head>
+    <title>Page Not Found</title>
+  </head>
+  <main
+    class="m-10 flex flex-col justify-center items-center text-2xl space-x-2"
+  >
+    <a href="/">
+      <img
+        src="/svg/logo-v4-just-turtle.svg"
+        alt="pickup-logo"
+        class="h-16 w-16"
+      />
+    </a>
     Oh no... 404 page not found
   </main>
 </Layout>
